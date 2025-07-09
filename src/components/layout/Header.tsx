@@ -4,7 +4,7 @@ import { FaArrowRight, FaBars, FaTimes } from 'react-icons/fa';
 import { FiMoon } from 'react-icons/fi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import Image from 'next/image';
-import Testriq_Logo from "../../../public/Testriq-Logo.png"
+import Testriq_Logo from "../../../public/Testriq_Logo.png"
 
 // Define the type for submenu items (simple string list)
 type Submenu = string[] | { heading: string; services: string[] }[];
