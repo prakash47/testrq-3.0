@@ -4,10 +4,10 @@ import { FaArrowRight, FaPlay, FaCheckCircle } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="bg-gray-100 py-10 px-8 md:px-26 flex flex-col md:flex-row items-center justify-between">
+    <section className="bg-gray-100 px-8 md:py-14 flex flex-col xl:flex-row xl:px-26 items-center justify-between">
       
       {/* Left Section */}
-      <div className="w-full md:w-2/3 mt-10 md:mt-0 text-center md:text-left">
+      <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center">
         <span className="inline-block bg-blue-100 text-[#25A8E0] text-base md:text-lg px-4 py-1 rounded-full mb-4">
           ISTQB Certified Experts
         </span>
@@ -24,7 +24,7 @@ const Hero = () => {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
           <button className="flex items-center gap-2 py-3 px-5 border bg-[#25A8E0] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
                 <span className="text-base">Get Started Today</span>
                 <FaArrowRight className="w-4 h-5" />
@@ -53,7 +53,7 @@ const Hero = () => {
       </div>
 
       {/* Right Section */}
-      <div className=" w-full md:w-1/2 bg-white shadow-lg rounded-xl max-w-xl h-80 mx-auto mr-0">
+      <div className="mt-10 w-full md:[w-1/2] lg:[mt-0] bg-white shadow-lg rounded-xl max-w-xl h-80 mx-auto ">
         
       </div>
     </section>
