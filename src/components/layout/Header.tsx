@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { FaArrowRight, FaBars, FaTimes } from 'react-icons/fa';
 import { FiMoon } from 'react-icons/fi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import Image from 'next/image';
+import Testriq_Logo from "../../../public/Testriq_Logo.png"
 
 // Define the type for submenu items (simple string list)
 type Submenu = string[] | { heading: string; services: string[] }[];
@@ -70,12 +72,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md px-4 sm:px-6 md:pl-10 pr-0 relative z-50">
-      <div className="flex justify-between items-center px-2 sm:px-5 md:px-16 py-3 sm:py-4">
+    <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 relative z-50">
+      <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
-          <span className="text-black">Test</span>
-          <span className="text-blue-600">riq</span>
+          <Image src={Testriq_Logo} alt="Testriq_Logo" height={100} width={120}/>
         </h2>
 
         {/* Desktop Menu */}
@@ -89,7 +90,7 @@ const Navbar = () => {
 
               {/* Mega Menu for 'Services' */}
               {item.label === 'Services' && item.submenu && (
-                <div className="absolute top-full mt-2 left-0 right-0 ml-[calc(-35vw+100%)] xl:ml-[calc(-38vw+100%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
+                <div className="absolute top-full mt-2 left-0 right-0 ml-[calc(-35vw+100%)] xl:ml-[calc(-39vw+100%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
                   <div className="w-full mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-4 xl:px-6 ml-8 xl:ml-24">
                     {item.submenu.map((column, colIdx) => {
                       // Check if the column is of type { heading: string, services: string[] }
@@ -108,7 +109,7 @@ const Navbar = () => {
                           <div className='flex flex-row'>
                             <ul className="space-y-2 xl:space-y-4">
                               {column.services.map((service, subIdx) => (
-                                <li key={subIdx} className="text-sm xl:text-base text-gray-600 hover:text-blue-500">
+                                <li key={subIdx} className="text-sm xl:text-base text-gray-600 hover:text-blue-600">
                                   {service}
                                 </li>
                               ))}
@@ -126,7 +127,7 @@ const Navbar = () => {
                 <ul className="absolute top-full left-0 bg-white shadow-md rounded-md py-2 w-max z-[55] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
                   {item.submenu.map((subItem, subIdx) => (
                     // Here, we conditionally render subItem based on its type
-                    <li key={subIdx} className="px-4 py-2 hover:bg-blue-50 text-sm xl:text-base text-gray-600">
+                    <li key={subIdx} className="px-4 py-2 hover:bg-blue-50 hover:text-blue-600 text-sm xl:text-base text-gray-600">
                       {typeof subItem === 'string' ? subItem : subItem.heading}
                     </li>
                   ))}
@@ -153,7 +154,7 @@ const Navbar = () => {
             <FiMoon className="w-5 h-5 xl:w-6 xl:h-6" />
           </button>
 
-          <button className="bg-black text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-gray-800 flex items-center gap-2">
+          <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
             <span className="text-sm xl:text-base">Talk to Expert</span>
             <FaArrowRight className="w-3 h-3 xl:w-4 xl:h-5" />
           </button>
@@ -175,9 +176,9 @@ const Navbar = () => {
           <div className="grid grid-cols-2 gap-4 py-4">
             {menuItems.map((item, idx) => (
               <div key={idx} className="relative group">
-                <div className="flex items-center gap-1 hover:text-blue-600 cursor-pointer p-2 rounded-md hover:bg-gray-50">
-                  <span className="text-sm font-medium">{item.label}</span>
-                  {item.submenu && <MdKeyboardArrowDown />}
+                <div className="flex items-center gap-1 cursor-pointer text-gray-700 hover:text-blue-600 p-2 rounded-md hover:bg-gray-50">
+                  <span className="text-md font-medium ">{item.label}</span>
+                  {item.submenu && <MdKeyboardArrowDown/>}
                 </div>
                 
                 {/* Tablet Submenu */}
@@ -189,16 +190,16 @@ const Navbar = () => {
                           if (typeof column === 'string') {
                             return (
                               <div key={colIdx} className="py-1">
-                                <h3 className="text-sm font-semibold text-gray-800">{column}</h3>
+                                <h3 className="text-sm font-semibold text-gray-700 hover:text-blue-600">{column}</h3>
                               </div>
                             );
                           }
                           return (
                             <div key={colIdx} className="py-1">
-                              <h3 className="text-sm font-semibold text-gray-800 mb-1">{column.heading}</h3>
+                              <h3 className="text-sm font-semibold text-gray-700 mb-1">{column.heading}</h3>
                               <ul className="space-y-1 ml-2">
                                 {column.services.slice(0, 3).map((service, subIdx) => (
-                                  <li key={subIdx} className="text-xs text-gray-600 hover:text-blue-500">
+                                  <li key={subIdx} className="pt-2 text-sm text-gray-700 hover:text-blue-600 cursor-pointer">
                                     {service}
                                   </li>
                                 ))}
@@ -210,7 +211,7 @@ const Navbar = () => {
                     ) : (
                       <ul className="py-1">
                         {item.submenu.map((subItem, subIdx) => (
-                          <li key={subIdx} className="px-4 py-2 hover:bg-blue-50 text-sm text-gray-600">
+                          <li key={subIdx} className="px-4 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-blue-600 cursor-pointer">
                             {typeof subItem === 'string' ? subItem : subItem.heading}
                           </li>
                         ))}
@@ -226,7 +227,7 @@ const Navbar = () => {
             <button className="p-2 text-gray-600 hover:text-yellow-500 transition-all">
               <FiMoon className="w-5 h-5" />
             </button>
-            <button className="bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 flex items-center gap-2">
+            <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
               <span className="text-sm">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3" />
             </button>
@@ -263,10 +264,10 @@ const Navbar = () => {
                           }
                           return (
                             <div key={colIdx}>
-                              <h3 className="text-sm font-semibold text-gray-800 mb-2">{column.heading}</h3>
+                              <h3 className="text-md font-semibold text-gray-800 mb-2">{column.heading}</h3>
                               <ul className="space-y-1 ml-2">
                                 {column.services.map((service, subIdx) => (
-                                  <li key={subIdx} className="text-xs text-gray-600 hover:text-blue-500 py-1">
+                                  <li key={subIdx} className="text-sm text-gray-600 hover:text-blue-600 py-1">
                                     {service}
                                   </li>
                                 ))}
@@ -278,7 +279,7 @@ const Navbar = () => {
                     ) : (
                       <ul className="space-y-2">
                         {item.submenu.map((subItem, subIdx) => (
-                          <li key={subIdx} className="text-sm text-gray-600 hover:text-blue-500 p-1">
+                          <li key={subIdx} className="text-sm text-gray-600 hover:text-blue-600 p-1">
                             {typeof subItem === 'string' ? subItem : subItem.heading}
                           </li>
                         ))}
@@ -295,7 +296,7 @@ const Navbar = () => {
               <FiMoon className="w-5 h-5" />
             </button>
 
-            <button className="bg-black text-white px-4 py-2 rounded-xl hover:bg-gray-800 flex items-center justify-center gap-2">
+            <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
               <span className="text-sm">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3" />
             </button>
