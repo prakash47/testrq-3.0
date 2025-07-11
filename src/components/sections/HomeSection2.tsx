@@ -1,5 +1,7 @@
 import { BsCheckCircle } from "react-icons/bs";
 import { MdRocketLaunch } from "react-icons/md";
+import Right_Card_Img from '../../../public/Home-Comprehensive-Software-Testing-Image.svg'
+import Image from "next/image";
 
 
 const HomeSection2 = () => {
@@ -11,12 +13,12 @@ const HomeSection2 = () => {
         { feature: 'Responsive Support and proven expertise' }
     ]
     return (
-        <section className="flex flex-col xl:flex-row items-center px-8 xl:px-26 py-12 bg-gray-100 max-w-screen-7xl">
-            <div className="flex flex-col xl:flex-row items-center mx-auto w-full gap-10 lg:gap-20">
+        <section className="flex flex-col lg:flex-row xl:flex-row items-center px-8 md:px-8 xl:px-26 py-12 bg-gray-100 max-w-screen-7xl">
+            <div className="flex flex-col lg:flex-row xl:flex-row items-center mx-auto w-full gap-10 lg:gap-20">
 
                 {/* Left Section */}
 
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full lg:w-1/2">
                     <h2 className="text-4xl lg:w-2xl">Why Choose Testriq? Your Partner In Quality Assurance</h2>
 
                     <p className="text-gray-500 text-lg mt-5 max-w-2xl">Testriq QA LAB LLP is dedicated to helping award winning application. Our team of ISTQB Certified Experts specialize in a wide range of testing services, ensuring quality and client success across diverse industries.</p>
@@ -31,19 +33,17 @@ const HomeSection2 = () => {
                         }
                     </ul>
 
-                    <button className="p-3 mt-3 max-w-md bg-sky-500 text-white font-semibold rounded-xl cursor-pointer">Learn More About Us</button>
-                </div>
-
-                <div className="flex items-center justify-center relative w-full bg-gradient-to-tl from-sky-200 to bg-sky-100 rounded-xl h-80 max-w-xl mt-5">
-                    <MdRocketLaunch size={300} className="opacity-10" />
-                    <div className="flex flex-col text-center absolute">
-
-                        <h5 className="text-2xl">LaunchFast QA</h5>
-                        <p className="text-lg text-gray-500">Acclerated Growth, Capital Effect</p>
+                    <div>
+                        <button className="p-3 mt-3 bg-sky-500 text-white font-semibold rounded-xl cursor-pointer">Learn More About Us</button>
                     </div>
                 </div>
+
+                <div className="flex w-full lg:w-2/3 justify-start h-80 max-w-xl mt-5">
+                    <Image src={Right_Card_Img} alt="Card-Image" className="rounded-xl" />
+                </div>
             </div>
-        </section>
+          
+        </section >
     )
 }
 

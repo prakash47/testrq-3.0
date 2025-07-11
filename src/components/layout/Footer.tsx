@@ -84,7 +84,7 @@ const Footer = () => {
             <ul className='space-y-2'>
               {
                 coreService.map((link) => {
-                  return <li key={link.name}>
+                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
                     <Link href={link.href}>{link.name}</Link>
                   </li>
                 })
@@ -98,7 +98,7 @@ const Footer = () => {
             <ul className='space-y-2'>
               {
                 specializedTesting.map((link) => {
-                  return <li key={link.name}>
+                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
                     <Link href={link.href}>{link.name}</Link>
                   </li>
                 })
@@ -112,7 +112,7 @@ const Footer = () => {
             <ul className='space-y-2'>
               {
                 quickLinks.map((link) => {
-                  return <li key={link.name}>
+                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
                     <Link href={link.href}>{link.name}</Link>
                   </li>
                 })
