@@ -11,8 +11,8 @@ const HomeSection2 = () => {
         { feature: 'Responsive Support and proven expertise' }
     ]
     return (
-        <section className="flex flex-col xl:flex-row items-center px-8 lg:px-16 py-12 bg-gray-100 w-full">
-            <div className="max-w-7xl mx-auto w-full flex flex-col xl:flex-row items-center gap-10">
+        <section className="flex flex-col xl:flex-row items-center px-8 xl:px-26 py-12 bg-gray-100 max-w-screen-7xl">
+            <div className="flex flex-col xl:flex-row items-center mx-auto w-full gap-10 lg:gap-20">
 
                 {/* Left Section */}
 
@@ -31,10 +31,10 @@ const HomeSection2 = () => {
                         }
                     </ul>
 
-                    <button className="p-3 mt-3 bg-sky-500 text-white font-semibold rounded-xl cursor-pointer">Learn More About Us</button>
+                    <button className="p-3 mt-3 max-w-md bg-sky-500 text-white font-semibold rounded-xl cursor-pointer">Learn More About Us</button>
                 </div>
 
-                <div className="flex items-center justify-center relative w-full bg-linear-to-tl from-sky-200 to bg-sky-100 rounded-xl h-80 max-w-xl mt-5">
+                <div className="flex items-center justify-center relative w-full bg-gradient-to-tl from-sky-200 to bg-sky-100 rounded-xl h-80 max-w-xl mt-5">
                     <MdRocketLaunch size={300} className="opacity-10" />
                     <div className="flex flex-col text-center absolute">
 
