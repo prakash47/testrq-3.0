@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { FaArrowRight, FaPlay, FaCheckCircle } from 'react-icons/fa';
+import { FaArrowRight, FaPlay } from 'react-icons/fa';
 
 const Hero = () => {
   return (
