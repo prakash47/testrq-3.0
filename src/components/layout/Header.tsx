@@ -100,7 +100,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 relative z-50">
+    <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
       <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
@@ -113,7 +113,7 @@ const Navbar = () => {
         </h2>
 
         {/* Desktop Menu */}
-        <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl l-0 r-0 text-gray-700 text-sm xl:text-base relative">
+        <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl text-gray-700 text-sm xl:text-base relative">
           {menuItems.map((item, idx) => (
             <li key={idx} className="relative group cursor-pointer">
               <div className="flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1">
@@ -123,7 +123,7 @@ const Navbar = () => {
 
               {/* Mega Menu for 'Services' */}
               {item.label === "Services" && item.submenu && (
-                <div className="absolute top-full mt-2 left-0 right-0 ml-[calc(-35vw+100%)] xl:ml-[calc(-39vw+100%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
+                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-35vw+100%)] xl:ml-[calc(-39vw+100%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
                   <div className="w-full mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-4 xl:px-6 ml-8 xl:ml-24">
                     {item.submenu.map((column, colIdx) => {
                       // Check if the column is of type { heading: string, services: string[] }

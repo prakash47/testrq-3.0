@@ -4,7 +4,7 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="px-8 md:py-14 flex flex-col xl:flex-row xl:px-26 items-center justify-between">
+    <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
         <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-lg px-4 py-1 rounded-full mb-4">

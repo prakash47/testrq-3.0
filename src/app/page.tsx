@@ -37,6 +37,30 @@ const HomeComprehensiveSoftwareTesting = dynamic(
   }
 );
 
+const HomeOurImpact = dynamic(
+  () => import("@/components/sections/HomeOurImpact"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const HomeReadyToElevate = dynamic(
+  () => import("@/components/sections/HomeReadyToElevate"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function Home() {
   return (
     <div>
@@ -44,6 +68,8 @@ export default function Home() {
         <HomeHeroSection />
         <HomeSection2 />
         <HomeComprehensiveSoftwareTesting />
+        <HomeOurImpact />\
+        <HomeReadyToElevate />
       </MainLayout>
     </div>
   );
