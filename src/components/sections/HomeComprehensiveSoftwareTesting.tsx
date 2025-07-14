@@ -5,9 +5,12 @@ import { FaMicrochip } from "react-icons/fa6";
 import { LuSmartphone } from "react-icons/lu";
 import { GoLock } from "react-icons/go";
 import { AiOutlineThunderbolt } from "react-icons/ai";
+import Link from 'next/link';
 
 
 const HomeComprehensiveSoftwareTesting = () => {
+
+    // Define the heading and card data
 
     const heading = {
         title: 'Comprehensive Software Testing Services',
@@ -23,30 +26,35 @@ const HomeComprehensiveSoftwareTesting = () => {
         { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability under various load conditions.' }
     ]
     return (
-        <section className='flex flex-col w-full max-w-screen-xl mx-auto md:px-8 px-8 xl:px-0 py-10 gap-y-15'>
+        // Main section container
+        <section className='flex flex-col w-full max-w-screen-2xl mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
+            {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl'>{heading.title}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
             </div>
 
+            {/* Card grid layout */}
+            {/* Each card contains an icon, title, and detail text */}
             <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-10'>
                 {
                     cardData.map((card) => {
                         const Icon = card.icon;
 
-                        return <a href={card.href} key={card.title}>
-                            <div className='flex flex-col border border-sky-200 rounded-lg p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-xl'>
-                            <span><Icon className='text-sky-500 bg-sky-100 p-2 rounded-lg' size={35} /></span>
-                            <h4 className='text-xl'>{card.title}</h4>
-                            <p className='text-gray-500'>{card.detail}</p>
+                        return <Link href={card.href} key={card.title}>
+                            <div className='flex flex-col border border-sky-200 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-xl'>
+                            <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
+                            <h2 className='text-xl'>{card.title}</h2>
+                            <p className='text-gray-500 text-sm'>{card.detail}</p>
                         </div>
-                        </a>
+                        </Link>
                     })
                 }
             </div>
 
+            {/* Button to view all services */}
             <div className='flex justify-center'>
-                <button className='p-2 border bg-sky-500 hover:bg-sky-600 cursor-pointer text-white w-50 rounded-lg'>View All Services <span className='text-2xl'>&#8594;</span></button>
+                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Services <span className='text-2xl'>&#8594;</span></button>
             </div>
         </section>
     )

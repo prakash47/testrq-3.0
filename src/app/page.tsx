@@ -37,27 +37,27 @@ const HomeComprehensiveSoftwareTesting = dynamic(
   }
 );
 
-const HomeOurImpact = dynamic(
-  () => import("@/components/sections/HomeOurImpact"),
+const ClientRatingSection = dynamic(
+  () => import("@/components/sections/ClientRatingSection"),
   {
     ssr: true,
     loading: () => (
       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
-    ),
+    )
   }
-);
+)
 
-const HomeReadyToElevate = dynamic(
-  () => import("@/components/sections/HomeReadyToElevate"),
+const HomeIndustryExpert = dynamic(
+  () => import("@/components/sections/HomeIndustryExpert"),
   {
     ssr: true,
     loading: () => (
       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
-    ),
+    )
   }
 );
 
@@ -68,8 +68,9 @@ export default function Home() {
         <HomeHeroSection />
         <HomeSection2 />
         <HomeComprehensiveSoftwareTesting />
-        <HomeOurImpact />\
-        <HomeReadyToElevate />
+        <ClientRatingSection />
+        <HomeIndustryExpert />
+        
       </MainLayout>
     </div>
   );
