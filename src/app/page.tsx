@@ -37,6 +37,18 @@ const HomeComprehensiveSoftwareTesting = dynamic(
   }
 );
 
+const ClientRatingSection = dynamic(
+  () => import("@/components/sections/ClientRatingSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    )
+  }
+)
+
 export default function Home() {
   return (
     <div>
@@ -44,6 +56,7 @@ export default function Home() {
         <HomeHeroSection />
         <HomeSection2 />
         <HomeComprehensiveSoftwareTesting />
+        <ClientRatingSection />
       </MainLayout>
     </div>
   );

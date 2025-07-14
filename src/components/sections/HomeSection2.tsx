@@ -13,7 +13,7 @@ const HomeSection2 = () => {
         { feature: 'Responsive Support and proven expertise' }
     ]
     return (
-        <section className="flex flex-col lg:flex-row xl:flex-row items-center px-8 md:px-8 xl:px-26 py-12 bg-gray-100 max-w-screen-7xl">
+        <section className="flex flex-col lg:flex-row xl:flex-row items-center px-8 md:px-8 xl:px-26 py-12 bg-[theme(color.background.gray)] max-w-screen-7xl">
             <div className="flex flex-col lg:flex-row xl:flex-row items-center mx-auto w-full gap-10 lg:gap-20">
 
                 {/* Left Section */}
