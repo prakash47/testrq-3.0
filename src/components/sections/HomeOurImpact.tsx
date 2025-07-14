@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -33,7 +32,7 @@ const HomeOurImpact = () => {
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24">
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-2xl sm:text-4xl">{impactSection.title}</h2>
+        <h2 className="text-2xl sm:text-3xl">{impactSection.title}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
           {impactSection.subtitle}
         </p>

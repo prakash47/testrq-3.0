@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
 

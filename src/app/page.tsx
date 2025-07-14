@@ -85,6 +85,30 @@ const HomeReadyToElevate = dynamic(
   }
 );
 
+const HomeTechStack = dynamic(
+  () => import("@/components/sections/HomeTechStack"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const HomeTrustedCompanies = dynamic(
+  () => import("@/components/sections/HomeTrustedCompanies"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function Home() {
   return (
     <div>
@@ -96,6 +120,8 @@ export default function Home() {
         <ClientRatingSection />
         <HomeReadyToElevate />
         <HomeIndustryExpert />
+        <HomeTechStack />
+        <HomeTrustedCompanies />
       </MainLayout>
     </div>
   );
