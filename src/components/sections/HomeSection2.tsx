@@ -1,5 +1,5 @@
 import { BsCheckCircle } from "react-icons/bs";
-import { MdRocketLaunch } from "react-icons/md";
+
 import Right_Card_Img from '../../../public/Home-Comprehensive-Software-Testing-Image.svg'
 import Image from "next/image";
 
@@ -33,10 +33,13 @@ const HomeSection2 = () => {
                         }
                     </ul>
 
+                    {/* Button to learn more about the company */}
                     <div>
                         <button className="p-3 mt-3 bg-sky-500 text-white font-semibold rounded-xl cursor-pointer">Learn More About Us</button>
                     </div>
                 </div>
+
+                {/* Right Section with Image */}
 
                 <div className="flex w-full lg:w-2/3 justify-start h-80 max-w-xl mt-5">
                     <Image src={Right_Card_Img} alt="Card-Image" className="rounded-xl" />
