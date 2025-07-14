@@ -27,7 +27,7 @@ const HomeIndustryExpert = () => {
         { icon: FaMobileRetro, title: 'Mobile Apps', detail: 'Cross-platform, performance, usability' }
     ]
     return (
-        <section className='flex flex-col w-full max-w-screen-2xl bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
+        <section className='flex flex-col w-full max-w-screen-3xl bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl'>{heading.title}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
@@ -39,7 +39,7 @@ const HomeIndustryExpert = () => {
                     cardData.map((card) => {
                         const Icon = card.icon;
 
-                        return <div key={card.title} className='flex flex-col justify-center items-center text-center border border-sky-200 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-xl'>
+                        return <div key={card.title} className='flex flex-col justify-center items-center text-center ring-sky-200 ring-2 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-lg'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}</p>
@@ -49,7 +49,7 @@ const HomeIndustryExpert = () => {
             </div>
             
             <div className='flex justify-center'>
-                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Industries  <span className='text-2xl'>&#8594;</span></button>
+                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Industries<span className='text-2xl'>&#8594;</span></button>
             </div>
 
         </section>

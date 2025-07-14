@@ -42,7 +42,7 @@ const HomeComprehensiveSoftwareTesting = () => {
                         const Icon = card.icon;
 
                         return <Link href={card.href} key={card.title}>
-                            <div className='flex flex-col border border-sky-200 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-xl'>
+                            <div className='flex flex-col ring-sky-200 ring-2 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}</p>
