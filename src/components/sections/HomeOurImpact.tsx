@@ -32,7 +32,7 @@ const HomeOurImpact = () => {
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24">
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-2xl sm:text-3xl">{impactSection.title}</h2>
+        <h2 className="text-2xl sm:text-3xl">Our Impact: <span className="text-[theme(color.brand.blue)]">Real-World Successes</span></h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
           {impactSection.subtitle}
         </p>
@@ -56,7 +56,7 @@ const HomeOurImpact = () => {
 
       {/* Button */}
       <div className="mt-10 text-center">
-        <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
+        <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
           View All Case Studies
           <FaArrowRight className="text-xs" />
         </button>
