@@ -1,14 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import {
-  SiSelenium,
   SiCypress,
   SiAppium,
-  SiApachejmeter,
-  SiPostman,
   SiSwagger,
   SiInsomnia,
-  SiZap,
 } from "react-icons/si";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaRocket, FaNetworkWired, FaDesktop } from "react-icons/fa";
@@ -122,7 +118,7 @@ const HeroTechStack = () => {
         {techStack.categories.map((category, idx) => (
           <div
             key={idx}
-            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 text-left transition duration-300 transform hover:shadow-xl cursor-pointer"
+            className="bg-white ring-sky-200 ring-1 rounded-lg shadow-sm p-6 text-left transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl cursor-pointer"
           >
             <h3 className="text-xl text-[theme(color.brand.blue)] mb-4 text-center">
               {category.title}

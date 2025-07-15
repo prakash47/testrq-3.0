@@ -43,7 +43,7 @@ const HomeOurImpact = () => {
         {impactSection.caseStudies.map((study, idx) => (
           <div
             key={idx}
-            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 transition duration-300 transform hover:shadow-xl"
+            className="bg-white ring-sky-200 ring-2 rounded-lg shadow-sm p-6 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl"
           >
             <h3 className="text-xl mb-2">{study.title}</h3>
             <span className="inline-block text-xs font-medium text-gray-700 bg-gray-100 px-2 py-1 rounded-full mb-3">
@@ -56,7 +56,7 @@ const HomeOurImpact = () => {
 
       {/* Button */}
       <div className="mt-10 text-center">
-        <button className="inline-flex items-center gap-2 bg-white border border-gray-300 text-gray-700 px-5 py-2.5 rounded-md text-sm font-medium transition duration-300 transform hover:shadow-xl cursor-pointer">
+        <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
           View All Case Studies
           <FaArrowRight className="text-xs" />
         </button>
