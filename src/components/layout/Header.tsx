@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
-import { FiMoon } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
 import Testriq_Logo from "../../../public/Testriq_Logo.png";
@@ -193,9 +192,6 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden xl:flex items-center gap-3 2xl:gap-4">
-          <button className="p-2 text-gray-600 hover:text-yellow-500 transition-all">
-            <FiMoon className="w-5 h-5 xl:w-6 xl:h-6" />
-          </button>
 
           <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
             <span className="text-sm xl:text-base">Talk to Expert</span>
@@ -281,9 +277,6 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t">
-            <button className="p-2 text-gray-600 hover:text-yellow-500 transition-all">
-              <FiMoon className="w-5 h-5" />
-            </button>
             <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
               <span className="text-sm">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3" />
@@ -370,10 +363,6 @@ const Navbar = () => {
           </ul>
 
           <div className="mt-6 flex flex-col gap-4 pt-4 border-t">
-            <button className="text-gray-600 hover:text-yellow-500 transition-all w-min">
-              <FiMoon className="w-5 h-5" />
-            </button>
-
             <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
               <span className="text-sm">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3" />

@@ -1,6 +1,22 @@
 import React from "react";
 import Image from "next/image";
 
+const Titles = {
+  title: "Trusted by Leading Companies",
+  subtitle: "Join 50+ companies who trust us with their critical testing needs and quality assurance requirements.",
+};
+
+const renderTitle = () => {
+        const titleParts = Titles.title.split('Trusted');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Trusted</span>
+                {titleParts[1]}
+            </>
+        );
+    };
+
 const companyLogos = [
   {
     name: "Canva",
@@ -43,7 +59,7 @@ const companyLogos = [
 const HomeTrustedCompanies = () => {
   return (
     <section className="bg-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 text-center">
-      <h2 className="text-2xl sm:text-4xl">Trusted by Leading Companies</h2>
+      <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
       <p className="mt-4 text-gray-500 text-base sm:text-lg">
         Join 50+ companies who trust us with their critical testing needs and
         quality assurance requirements.

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
 import {
   SiCypress,
   SiAppium,
@@ -11,6 +12,17 @@ import { FaRocket, FaNetworkWired, FaDesktop } from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
 import { PiMedal } from "react-icons/pi";
+
+const renderTitle = () => {
+        const titleParts = techStack.title.split('Technology');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Technology</span>
+                {titleParts[1]}
+            </>
+        );
+    };
 
 const techStack = {
   title: "Our Technology Stack",
@@ -32,10 +44,38 @@ const techStack = {
             />
           ),
         },
-        { name: "Cypress", icon: <SiCypress /> },
-        { name: "Playwright", icon: <FaDesktop /> },
-        { name: "Appium", icon: <SiAppium /> },
-        { name: "TestComplete", icon: <FaCircleCheck /> },
+        { name: "Cypress",
+          icon: <Image
+            src="/Cypress_Logo.png"
+            alt="Cypress Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Playwright", 
+          icon: <Image
+            src="/Playwright_Logo.svg"
+            alt="Playwright Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Appium", 
+          icon: <Image
+            src="/Appium_Logo.svg"
+            alt="Appium Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "TestComplete", 
+          icon: <Image
+            src="/TestComplete_Logo.png"
+            alt="TestComplete Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
       ],
     },
     {
@@ -53,10 +93,38 @@ const techStack = {
             />
           ),
         },
-        { name: "LoadRunner", icon: <FaRocket /> },
-        { name: "K6", icon: <FaNetworkWired /> },
-        { name: "Gatling", icon: <FaRocket /> },
-        { name: "BlazeMeter", icon: <FaRocket /> },
+        { name: "LoadRunner", 
+          icon: <Image
+            src="/Loadrunner_Logo.png"
+            alt="LoadRunner Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "K6", 
+          icon:<Image
+            src="/K6_Logo.png"
+            alt="K6 Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Gatling", 
+          icon:<Image
+            src="/Gatling_Logo.png"
+            alt="Gatling Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          />},
+        { name: "BlazeMeter", 
+          icon: <Image
+            src="/BlazeMeter_Logo.png"
+            alt="BlazeMeter Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          />},
       ],
     },
     {
@@ -74,10 +142,34 @@ const techStack = {
             />
           ),
         },
-        { name: "REST Assured", icon: <TbApi /> },
-        { name: "SoapUI", icon: <SiSwagger /> },
-        { name: "Insomnia", icon: <SiInsomnia /> },
-        { name: "Newman", icon: <TbApi /> },
+        { name: "REST Assured", icon: <Image
+            src="/RestAssured_Logo.png"
+            alt="REST Assured"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "SoapUI", icon: <Image
+            src="/SoapUI_Logo.png"
+            alt="SoapUI Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Insomnia", icon: <Image
+            src="/Insomnia_Logo.png"
+            alt="Insomnia Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Newman", icon: <Image
+            src="/Newman_Logo.png"
+            alt="Newman Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
       ],
     },
     {
@@ -95,10 +187,34 @@ const techStack = {
             />
           ),
         },
-        { name: "Burp Suite", icon: <MdOutlineSecurity /> },
-        { name: "Nessus", icon: <MdOutlineSecurity /> },
-        { name: "Veracode", icon: <PiMedal /> },
-        { name: "Checkmarx", icon: <MdOutlineSecurity /> },
+        { name: "Burp Suite", icon: <Image
+            src="/BurpSuite_Logo.png"
+            alt=" Burp Suite Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Nessus", icon:<Image
+            src="/Nessus_Logo.png"
+            alt="Nessus Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Veracode", icon: <Image
+            src="/Veracode_Logo.png"
+            alt="Veracode Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
+        { name: "Checkmarx", icon: <Image
+            src="/Checkmarx_Logo.png"
+            alt="Checkmarx Logo"
+            width={20}
+            height={20}
+            className="object-contain"
+          /> },
       ],
     },
   ],
@@ -108,7 +224,7 @@ const HeroTechStack = () => {
   return (
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 bg-white text-center">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-2xl sm:text-4xl">{techStack.title}</h2>
+        <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
           {techStack.subtitle}
         </p>
@@ -118,7 +234,7 @@ const HeroTechStack = () => {
         {techStack.categories.map((category, idx) => (
           <div
             key={idx}
-            className="bg-white ring-sky-200 ring-1 rounded-lg shadow-sm p-6 text-left transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl cursor-pointer"
+            className="bg-white ring-sky-200 ring-1 rounded-lg shadow-sm p-6 text-left transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl cursor-pointer hover:-translate-y-2"
           >
             <h3 className="text-xl text-[theme(color.brand.blue)] mb-4 text-center">
               {category.title}
@@ -139,6 +255,13 @@ const HeroTechStack = () => {
           </div>
         ))}
       </div>
+      {/* Button */}
+            <div className="mt-10 text-center">
+              <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
+                View All Tools
+                <FaArrowRight className="text-xs" />
+              </button>
+            </div>
     </section>
   );
 };

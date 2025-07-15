@@ -1,6 +1,17 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
+const renderTitle = () => {
+        const titleParts = impactSection.title.split('Real-World Successes');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Real-World Successes</span>
+                {titleParts[1]}
+            </>
+        );
+    };
+
 const impactSection = {
   title: "Our Impact: Real-World Successes",
   subtitle:
@@ -32,7 +43,7 @@ const HomeOurImpact = () => {
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24">
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-2xl sm:text-3xl">Our Impact: <span className="text-[theme(color.brand.blue)]">Real-World Successes</span></h2>
+        <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
           {impactSection.subtitle}
         </p>
@@ -43,7 +54,7 @@ const HomeOurImpact = () => {
         {impactSection.caseStudies.map((study, idx) => (
           <div
             key={idx}
-            className="bg-white ring-sky-200 ring-2 rounded-lg shadow-sm p-6 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl"
+            className="bg-white ring-sky-200 ring-2 rounded-lg shadow-sm p-6 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
           >
             <h3 className="text-xl mb-2">{study.title}</h3>
             <span className="inline-block text-xs font-medium text-gray-700 bg-gray-100 px-2 py-1 rounded-full mb-3">
