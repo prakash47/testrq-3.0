@@ -84,9 +84,32 @@ const HomeReadyToElevate = dynamic(
     ),
   }
 );
-
 const HomeTechStack = dynamic(
   () => import("@/components/sections/HomeTechStack"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const HomeChooseTestriq = dynamic(
+  () => import("@/components/sections/HomeChooseTestriq"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    )
+  }
+)
+
+const HomeInsightSection = dynamic(
+  () => import("@/components/sections/HomeInsightSection"),
   {
     ssr: true,
     loading: () => (
@@ -122,6 +145,8 @@ export default function Home() {
         <HomeIndustryExpert />
         <HomeTechStack />
         <HomeTrustedCompanies />
+        <HomeChooseTestriq />
+        <HomeInsightSection />
       </MainLayout>
     </div>
   );

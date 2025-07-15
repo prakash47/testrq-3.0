@@ -29,7 +29,7 @@ const ClientRatingSection = () => {
         { Comment: "Testriq was a clutch QA partner, providing essential services to meetrigorous regulatory requirements with excellence.", clientName: "Dave Hadden", designation: "Founder and President, Pro-ficiency" },
     ]
     return (
-        <section className='flex flex-col w-full max-w-screen-2xl mx-auto bg-[theme(color.background.gray)] md:px-8 px-8 xl:px-24 py-15  gap-y-6'>
+        <section className='flex flex-col w-full max-w-screen-3xl mx-auto bg-[theme(color.background.gray)] md:px-8 px-8 xl:px-24 py-15  gap-y-6'>
             <h2 className="text-4xl text-center">{heading.title}</h2>
             <p className='text-center text-lg text-gray-500'>{heading.info}</p>
 
@@ -38,7 +38,7 @@ const ClientRatingSection = () => {
                 {
                     cardData.map((card, index) => (
 
-                        <div key={index} className='flex flex-col border border-sky-200 rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-xl'>
+                        <div key={index} className='flex flex-col ring-sky-200 ring-2 bg-white rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200'>
                             <RatingStar />
                             <p className='text-gray-500 italic'>" {card.Comment} "</p>
                             <div>
