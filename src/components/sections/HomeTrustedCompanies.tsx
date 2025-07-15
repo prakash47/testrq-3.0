@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import ImageSlider from "../ImageSlider";
 
 const Titles = {
   title: "Trusted by Leading Companies",
@@ -17,44 +17,6 @@ const renderTitle = () => {
         );
     };
 
-const companyLogos = [
-  {
-    name: "Canva",
-    logo: (
-      <Image
-        src="/Canva_Logo.png"
-        alt="Canva Logo"
-        width={80}
-        height={160}
-        className="object-contain"
-      />
-    ),
-  },
-  {
-    name: "Milton",
-    logo: (
-      <Image
-        src="/Milton_Logo.jpg"
-        alt="Milton Logo"
-        width={80}
-        height={160}
-        className="object-contain"
-      />
-    ),
-  },
-  {
-    name: "Brandify",
-    logo: (
-      <Image
-        src="/Brandify_Logo.png"
-        alt="Brandify Logo"
-        width={80}
-        height={160}
-        className="object-contain"
-      />
-    ),
-  },
-];
 
 const HomeTrustedCompanies = () => {
   return (
@@ -65,14 +27,7 @@ const HomeTrustedCompanies = () => {
         quality assurance requirements.
       </p>
 
-      {/* Company Logos */}
-      <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 items-center justify-center">
-        {companyLogos.map((company, idx) => (
-          <div key={idx} className="flex items-center justify-center">
-            {company.logo}
-          </div>
-        ))}
-      </div>
+      <ImageSlider />
     </section>
   );
 };
