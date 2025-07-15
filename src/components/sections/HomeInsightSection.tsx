@@ -7,6 +7,18 @@ const HomeInsightSection = () => {
             title: 'Latest Insights & Best Practices',
             info: 'Stay updated with the latest trends, best practices, and insights from our testing experts.'
         }
+
+        // Split the title into parts to style "Software Testing" in blue
+    // Split the title to style "Insights" and "Practices" in blue
+    const renderTitle = () => {
+        // Replace "Insights" and "Practices" with spans that have blue styling
+        const formattedTitle = heading.title
+            .replace('Insights', '<span class="text-[theme(color.brand.blue)]">Insights</span>')
+            .replace('Practices', '<span class="text-[theme(color.brand.blue)]">Practices</span>');
+
+        // Use dangerouslySetInnerHTML to render the HTML string
+        return <span dangerouslySetInnerHTML={{ __html: formattedTitle }} />;
+    };
     
         const cardData = [
             { about: 'AI Testing', title: 'AI-Powered Testing: The Future is Here', date: 'Dec 15, 2024', readTime: '5 min read',  detail: 'Discover how artificial intelligence is revolutionizing software testing and quality assurance processes.', href: '#' },
@@ -18,7 +30,7 @@ const HomeInsightSection = () => {
         <section className='flex flex-col w-full max-w-screen-2xl mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
-                <h2 className='text-4xl'>{heading.title}</h2>
+                <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
             </div>
 
@@ -27,7 +39,7 @@ const HomeInsightSection = () => {
             <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-10'>
                 {
                     cardData.map((card) => {
-                        return <div key={card.title} className='flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
+                        return <div key={card.title} className='flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2'>
                             <p className='text-xs text-blue-400 p-1.5 py-1 rounded-2xl bg-sky-100'>{card.about}</p>
                             <div className='flex text-sm text-gray-500 space-x-3'>
                                 <p>{card.date}</p> <span>.</span> <p>{card.readTime}</p>

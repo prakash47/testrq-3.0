@@ -10,14 +10,14 @@ const Hero = () => {
           ISTQB Certified Experts
         </span>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl  md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+        <h1 className="text-3xl hidden md:block sm:text-4xl  md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Premium{" "}
           <span className="text-[theme(color.brand.blue)]">
-            Software Testing
+            Software <br />  Testing&nbsp;
           </span>
-          <br /> Services
+          Services
         </h1>
-        <h1 className="text-3xl md:hidden sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+        <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Premium{" "}
           <span className="text-[theme(color.brand.blue)]">
             Software Testing
@@ -44,7 +44,7 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center md:justify-center gap-6 lg:mx-0">
+        <div className="flex flex-wrap justify-center md:justify-center xl:justify-start gap-6 lg:mx-0">
           {[
             ["14+", "Years Experience"],
             ["500K", "Test Cases Executed"],

@@ -39,7 +39,7 @@ const HomeComprehensiveSoftwareTesting = () => {
     ]
     return (
         // Main section container
-        <section className='flex flex-col w-full max-w-screen-2xl mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
+        <section className='flex flex-col w-full max-w-screen-2xl bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
@@ -54,14 +54,17 @@ const HomeComprehensiveSoftwareTesting = () => {
                         const Icon = card.icon;
 
                         return <Link href={card.href} key={card.title}>
-                            <div className='flex flex-col ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
+                            <div className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl  hover:-translate-y-2'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
-                            <p className='text-gray-500 text-sm'>{card.detail}<span className='text-2xl'>&#8594;</span></p>
+                            <p className='text-gray-500 text-sm'>{card.detail}</p>
                         </div>
                         </Link>
                     })
                 }
+            </div>
+            <div className='flex justify-center'>
+                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Services<span className='text-2xl'>&#8594;</span></button>
             </div>
         </section>
     )

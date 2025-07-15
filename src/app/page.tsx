@@ -104,7 +104,7 @@ const HomeInsightSection = dynamic(
     ssr: true,
     loading: () => (
       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading....</p>
+        <p className="text-gray-500">Loading...</p>
       </div>
     ),
   }

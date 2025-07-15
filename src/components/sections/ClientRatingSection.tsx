@@ -18,7 +18,7 @@ const ClientRatingSection = () => {
 
     // Define the heading and card data
     const heading = {
-        title: 'What Our Clients Say',
+        title: 'What Our Clients Say?',
         info: 'See what our clients say about our exceptional QA services'
     }
 
@@ -50,7 +50,7 @@ const ClientRatingSection = () => {
                 {
                     cardData.map((card, index) => (
 
-                        <div key={index} className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200'>
+                        <div key={index} className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200  hover:-translate-y-2'>
                             <RatingStar />
                             <p className='text-gray-500 italic'>{card.Comment}</p>
                             <div>
