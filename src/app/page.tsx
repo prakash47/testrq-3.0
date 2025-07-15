@@ -97,6 +97,17 @@ const HomeChooseTestriq = dynamic(
   }
 )
 
+const HomeInsightSection = dynamic(
+  () => import("@/components/sections/HomeInsightSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 export default function Home() {
   return (
     <div>
@@ -109,6 +120,7 @@ export default function Home() {
         <HomeReadyToElevate />
         <HomeIndustryExpert />
         <HomeChooseTestriq />
+        <HomeInsightSection />
       </MainLayout>
     </div>
   );

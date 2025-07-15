@@ -45,16 +45,11 @@ const HomeComprehensiveSoftwareTesting = () => {
                             <div className='flex flex-col ring-sky-200 ring-2 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
-                            <p className='text-gray-500 text-sm'>{card.detail}</p>
+                            <p className='text-gray-500 text-sm'>{card.detail}<span className='text-2xl'>&#8594;</span></p>
                         </div>
                         </Link>
                     })
                 }
-            </div>
-
-            {/* Button to view all services */}
-            <div className='flex justify-center'>
-                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Services <span className='text-2xl'>&#8594;</span></button>
             </div>
         </section>
     )
