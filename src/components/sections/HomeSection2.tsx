@@ -19,7 +19,7 @@ const HomeSection2 = () => {
                 {/* Left Section */}
 
                 <div className="flex flex-col w-full lg:w-1/2">
-                    <h2 className="text-4xl lg:w-2xl">Why Choose Testriq? Your Partner In Quality Assurance</h2>
+                    <h2 className="text-4xl font-semibold lg:w-2xl">Why Choose <span className="text-[theme(color.brand.blue)]"> Testriq</span>? Your Partner In Quality Assurance</h2>
 
                     <p className="text-gray-500 text-lg mt-5 max-w-2xl">Testriq QA LAB LLP is dedicated to helping award winning application. Our team of ISTQB Certified Experts specialize in a wide range of testing services, ensuring quality and client success across diverse industries.</p>
 

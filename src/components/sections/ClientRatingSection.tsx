@@ -21,6 +21,18 @@ const ClientRatingSection = () => {
         title: 'What Our Clients Say',
         info: 'See what our clients say about our exceptional QA services'
     }
+
+    // Split the title into parts to style "Client" in blue
+    const renderTitle = () => {
+        const titleParts = heading.title.split('Clients');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Clients</span>
+                {titleParts[1]}
+            </>
+        );
+    };
     const cardData = [
         // Add client rating data here
         { Comment: "Testriq is thorough and proficient in testing across our diverse user base. They are flexible and reliably meet deadlines.", clientName: "Jake Browning", designation: "Director of Product and Technology" },
@@ -30,7 +42,7 @@ const ClientRatingSection = () => {
     ]
     return (
         <section className='flex flex-col w-full max-w-screen-3xl mx-auto bg-[theme(color.background.gray)] md:px-8 px-8 xl:px-24 py-15  gap-y-6'>
-            <h2 className="text-4xl text-center">{heading.title}</h2>
+            <h2 className="text-4xl font-semibold text-center">{renderTitle()}</h2>
             <p className='text-center text-lg text-gray-500'>{heading.info}</p>
 
             {/* Ratings Card */}
@@ -38,9 +50,9 @@ const ClientRatingSection = () => {
                 {
                     cardData.map((card, index) => (
 
-                        <div key={index} className='flex flex-col ring-sky-200 ring-2 bg-white rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200'>
+                        <div key={index} className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 gap-y-7 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200'>
                             <RatingStar />
-                            <p className='text-gray-500 italic'>" {card.Comment} "</p>
+                            <p className='text-gray-500 italic'>{card.Comment}</p>
                             <div>
                                 <h3 className='text-lg font-semibold'>{card.clientName}</h3>
                                 <p className='text-sm text-gray-500'>{card.designation}</p>
