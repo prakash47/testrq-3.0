@@ -36,7 +36,7 @@ const HomeReadyToElevate = () => {
         {/* Secondary Button */}
         <a
           href={ctaSection.secondaryButton.href}
-          className="inline-flex items-center px-6 py-3 text-gray-700 border border-gray-300 hover:bg-gray-50 transition rounded-md text-sm font-medium"
+          className="inline-flex items-center px-6 py-3 rounded-md ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white text-sm font-medium"
         >
           {ctaSection.secondaryButton.label}
         </a>
