@@ -13,17 +13,7 @@ const HomeHeroSection = dynamic(
   }
 );
 
-const HomeSection2 = dynamic(
-  () => import("@/components/sections/HomeSection2"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+
 
 const HomeComprehensiveSoftwareTesting = dynamic(
   () => import("@/components/sections/HomeComprehensiveSoftwareTesting"),
@@ -138,7 +128,6 @@ export default function Home() {
     <div>
       <MainLayout>
         <HomeHeroSection />
-        <HomeSection2 />
         <HomeComprehensiveSoftwareTesting />
         <HomeOurImpact />
         <ClientRatingSection />
