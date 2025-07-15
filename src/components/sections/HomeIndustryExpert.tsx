@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdTrolley, MdOutlineHealthAndSafety, MdCreditCard } from "react-icons/md";
+import { MdTrolley, MdOutlineHealthAndSafety } from "react-icons/md";
 import { GiSwipeCard } from "react-icons/gi";
 import { ImBooks } from "react-icons/im";
 import { IoGameController } from "react-icons/io5";
@@ -16,6 +16,18 @@ const HomeIndustryExpert = () => {
         info: 'We serve diverse industries with specialized testing solutions tailored to unique business requirements and compliance standards.'
     }
 
+    // Split the title into parts to style "Client" in blue
+    const renderTitle = () => {
+        const titleParts = heading.title.split('Expertise');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Expertise</span>
+                {titleParts[1]}
+            </>
+        );
+    };
+
     const cardData = [
         { icon: MdTrolley, title: 'E-commerce', detail: 'Payment gateways, user experience, performance' },
         { icon: MdOutlineHealthAndSafety, title: 'Healthcare', detail: 'HIPAA compliance, data security, usability' },
@@ -29,7 +41,7 @@ const HomeIndustryExpert = () => {
     return (
         <section className='flex flex-col w-full max-w-screen-3xl bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
             <div className='flex flex-col gap-y-5 text-center'>
-                <h2 className='text-4xl'>{heading.title}</h2>
+                <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
             </div>
 
@@ -39,7 +51,7 @@ const HomeIndustryExpert = () => {
                     cardData.map((card) => {
                         const Icon = card.icon;
 
-                        return <div key={card.title} className='flex flex-col justify-center items-center text-center ring-sky-200 ring-2 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-lg'>
+                        return <div key={card.title} className='flex flex-col justify-center items-center text-center ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-lg'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}</p>

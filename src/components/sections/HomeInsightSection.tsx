@@ -27,7 +27,7 @@ const HomeInsightSection = () => {
             <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-10'>
                 {
                     cardData.map((card) => {
-                        return <div key={card.title} className='flex flex-col justify-start items-start ring-sky-200 ring-2 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
+                        return <div key={card.title} className='flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
                             <p className='text-xs text-blue-400 p-1.5 py-1 rounded-2xl bg-sky-100'>{card.about}</p>
                             <div className='flex text-sm text-gray-500 space-x-3'>
                                 <p>{card.date}</p> <span>.</span> <p>{card.readTime}</p>
@@ -41,8 +41,8 @@ const HomeInsightSection = () => {
                 }
             </div>
 
-            <div className='flex justify-center '>
-                <button className='flex justify-center items-center p-2 ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white w-50 rounded-lg'>View All Articles<span className='text-2xl'>&#8594;</span></button>
+            <div className='flex justify-center'>
+                <button className='flex justify-center items-center p-2 ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white w-50 rounded-lg'>View All Articles &nbsp;<span className='text-2xl'>&#8594;</span></button>
             </div>
             
         </section>

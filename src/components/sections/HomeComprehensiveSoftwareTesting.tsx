@@ -17,6 +17,18 @@ const HomeComprehensiveSoftwareTesting = () => {
         info: 'Explore our specialized testing services designed to meet your unique quality assurance needs with responsive support and proven expertise.'
     }
 
+    // Split the title into parts to style "Software Testing" in blue
+    const renderTitle = () => {
+        const titleParts = heading.title.split('Software Testing');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">Software Testing</span>
+                {titleParts[1]}
+            </>
+        );
+    };
+
     const cardData = [
         { icon: TbWorld, title: 'Web & Mobile Testing', href: '#', detail: 'End-to-end testing for web applications and mobile apps (iOS & Android), covering functional, usability, performance and security aspects.' },
         { icon: IoServerOutline, title: 'API Testing', href: '#', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
@@ -30,7 +42,7 @@ const HomeComprehensiveSoftwareTesting = () => {
         <section className='flex flex-col w-full max-w-screen-2xl mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
-                <h2 className='text-4xl'>{heading.title}</h2>
+                <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
             </div>
 
@@ -42,7 +54,7 @@ const HomeComprehensiveSoftwareTesting = () => {
                         const Icon = card.icon;
 
                         return <Link href={card.href} key={card.title}>
-                            <div className='flex flex-col ring-sky-200 ring-2 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
+                            <div className='flex flex-col ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}<span className='text-2xl'>&#8594;</span></p>
