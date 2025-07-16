@@ -1,14 +1,15 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
 
 const TeamLeadershipSection = () => {
   const leaders = [
     {
-      name: "Sarah Johnson",
-      position: "Chief Executive Officer",
-      experience: "15+ Years",
-      specialization: "Strategic Leadership & Business Development",
-      bio: "Sarah founded Testriq with a vision to revolutionize software testing. With over 15 years in the industry, she has led the company from a small startup to a globally recognized QA partner.",
+      name: "Sandeep Maske",
+      position: "Founder & CEO",
+      experience: "20+ Years",
+      specialization: "QA Strategy & Leadership",
+      bio: "Sandeep Maske, Founder & CEO of TESTRIQ QA LAB & Cinute Digital, drives unparalleled excellence in software testing, empowering diverse industries with QA expertise.",
       achievements: [
         "Founded Testriq in 2010",
         "Scaled company to 50+ employees",
@@ -16,6 +17,13 @@ const TeamLeadershipSection = () => {
         "Speaker at 20+ industry conferences"
       ],
       gradient: "from-blue-500 to-blue-600",
+      img : <Image
+              src="/sandeep-maske-img.webp"
+              alt="Sandeep Maske"
+              width={190}
+              height={280}
+              className="object-cover rounded-full"
+            />
     },
     {
       name: "Michael Chen",
@@ -59,7 +67,7 @@ const TeamLeadershipSection = () => {
             Meet Our <span className="text-[theme(color.brand.blue)]">Leaders</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our leadership team combines decades of experience with a forward-thinking approach 
+            Our leadership team combines decades of experience with a forward-thinking approach
             to quality assurance, driving innovation and excellence across all our services.
           </p>
         </div>
@@ -69,13 +77,11 @@ const TeamLeadershipSection = () => {
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                index % 2 === 0 ? "" : ""
-              }`}
+              className={`bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+                }`}
             >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
-                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-              }`}>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                }`}>
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                   <div className="mb-6">
@@ -90,9 +96,9 @@ const TeamLeadershipSection = () => {
                       <span className="text-sm">{leader.specialization}</span>
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-700 leading-relaxed mb-6">{leader.bio}</p>
-                  
+
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
                     <div className="space-y-2">
@@ -104,7 +110,7 @@ const TeamLeadershipSection = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* Social Links */}
                   <div className="flex gap-4">
                     <button className="w-10 h-10 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
@@ -118,20 +124,20 @@ const TeamLeadershipSection = () => {
                     </button>
                   </div>
                 </div>
-                
+
                 {/* Leader Visual */}
                 <div className={`flex justify-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                   <div className="relative">
                     <div className={`w-64 h-64 bg-gradient-to-br ${leader.gradient} rounded-2xl flex items-center justify-center`}>
                       <div className="text-center text-white">
-                        <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-3xl font-bold">{leader.name.split(' ').map(n => n[0]).join('')}</span>
+                        <div className="w-40 h-40 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                          {leader.img}
                         </div>
                         <div className="text-lg font-semibold">{leader.name}</div>
                         <div className="text-sm opacity-90">{leader.position}</div>
                       </div>
                     </div>
-                    
+
                     {/* Floating Badge */}
                     <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-3 border">
                       <div className="text-center">
@@ -153,11 +159,11 @@ const TeamLeadershipSection = () => {
               Our Leadership <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              We believe in leading by example, fostering innovation, and creating an environment 
+              We believe in leading by example, fostering innovation, and creating an environment
               where every team member can thrive and contribute to our collective success.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
