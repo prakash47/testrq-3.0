@@ -1,17 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import {
-  SiCypress,
-  SiAppium,
-  SiSwagger,
-  SiInsomnia,
-} from "react-icons/si";
-import { FaCircleCheck } from "react-icons/fa6";
-import { FaRocket, FaNetworkWired, FaDesktop } from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
-import { MdOutlineSecurity } from "react-icons/md";
-import { PiMedal } from "react-icons/pi";
 
 const renderTitle = () => {
         const titleParts = techStack.title.split('Technology');
