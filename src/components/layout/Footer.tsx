@@ -126,7 +126,7 @@ const Footer = () => {
             <div className='flex flex-col md:flex-row justify-between items-center gap-4 text-[#59585B]'>
               
               <div className='text-center md:text-left'>
-                <p className='text-sm'>&copy; 2024 Testriq QA LAB LLP. All Rights Reserved</p>
+                <p className='text-sm'>&copy; 2025 Testriq QA LAB LLP. All Rights Reserved</p>
               </div>
 
               <div className='flex flex-wrap justify-center md:justify-end gap-4'>
