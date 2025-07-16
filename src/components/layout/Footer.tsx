@@ -27,7 +27,8 @@ const Footer = () => {
     { name: 'ETL Testing', href: '#' }
   ]
   const quickLinks = [
-    { name: 'About Us', href: '#' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Our Team', href: '/our-team' },
     { name: 'Our Clients', href: '#' },
     { name: 'Case Studies', href: '#' },
     { name: 'Blogs', href: '#' },
@@ -37,110 +38,109 @@ const Footer = () => {
 
 
   return (
-    <footer className='w-screen-3xl bg-gray-300 md:px-5 lg:px-16'>
-      <section className='flex flex-col px-3 md:py-16 pt-10'>
-        <div className='flex flex-col md:flex-row md:px-6 text-[#59585B] md:gap-5'>
-          <div className='lg:w-2xl'>
+    <footer className='w-full bg-gray-300 overflow-hidden'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <section className='py-10 md:py-16'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-[#59585B]'>
+            
+            {/* Company Info Section */}
+            <div className='lg:col-span-1'>
+              <Image
+                src={Testriq_Logo}
+                alt='Testriq-Logo'
+                width={100}
+                height={100}
+                className='mb-4'
+              />
 
-            <Image
-              src={Testriq_Logo}
-              alt='Testriq-Logo'
-              width={100}
-              height={100}
-            />
-
-
-
-            <p className='mt-3'>
-              Premium software testing services with over a decade of
-              experience. ISTQB certified experts providing comprehensive QA
-              solutions.
-            </p>
-
-
-            <div className='flex mt-2'>
-
-              <p><span><IoLocation className='w-10 mt-1 mr-1' /></span>
-                <span>Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107</span>
+              <p className='mb-4 text-sm leading-relaxed'>
+                Premium software testing services with over a decade of
+                experience. ISTQB certified experts providing comprehensive QA
+                solutions.
               </p>
+
+              <div className='space-y-3'>
+                <div className='flex items-start gap-2'>
+                  <IoLocation className='w-5 h-5 mt-1 flex-shrink-0' />
+                  <span className='text-sm'>
+                    Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107
+                  </span>
+                </div>
+
+                <div className='flex items-center gap-2'>
+                  <FaPhoneAlt className='w-4 h-4 flex-shrink-0' />
+                  <a href="tel:+91 915-2929-343" className='text-sm hover:text-sky-500 transition duration-200 ease-in-out'>
+                    (+91) 915-2929-343
+                  </a>
+                </div>
+
+                <div className='flex items-center gap-2'>
+                  <IoIosMail className='w-5 h-5 flex-shrink-0' />
+                  <a href="mailto:contact@testriq.com" className='text-sm hover:text-sky-500 transition duration-200 ease-in-out'>
+                    contact@testriq.com
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className='flex mt-2'>
-              <FaPhoneAlt className='mt-1 mr-2' />
-              <a href="tel:+91 915-2929-343" className=' hover:text-sky-500 transition duration-200 ease-in-out'>
-                (+91) 915-2929-343
-              </a>
+            {/* Core Services Section */}
+            <div className=''>
+              <h3 className="text-lg font-bold mb-4 text-sky-500">Core Service</h3>
+              <ul className='space-y-2'>
+                {coreService.map((link) => (
+                  <li key={link.name} className='transition duration-200 hover:text-sky-500'>
+                    <Link href={link.href} className='text-sm'>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className='flex mt-2'>
-              <IoIosMail className='mr-1 mt-1' size={20} />
-              <a href="mailto:contact@testriq.com" className=' hover:text-sky-500 transition duration-200 ease-in-out'>contact@testriq.com</a>
+            {/* Specialized Testing Section */}
+            <div className=''>
+              <h3 className="text-lg font-bold mb-4 text-sky-500">Specialized Testing</h3>
+              <ul className='space-y-2'>
+                {specializedTesting.map((link) => (
+                  <li key={link.name} className='transition duration-200 hover:text-sky-500'>
+                    <Link href={link.href} className='text-sm'>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company Links Section */}
+            <div className=''>
+              <h3 className="text-lg font-bold mb-4 text-sky-500">Company</h3>
+              <ul className='space-y-2'>
+                {quickLinks.map((link) => (
+                  <li key={link.name} className='transition duration-200 hover:text-sky-500'>
+                    <Link href={link.href} className='text-sm'>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Divider */}
+          <div className='mt-8 pt-8 border-t border-gray-400'>
+            <div className='flex flex-col md:flex-row justify-between items-center gap-4 text-[#59585B]'>
+              
+              <div className='text-center md:text-left'>
+                <p className='text-sm'>&copy; 2024 Testriq QA LAB LLP. All Rights Reserved</p>
+              </div>
+
+              <div className='flex flex-wrap justify-center md:justify-end gap-4'>
+                <a href="#" className='text-sm hover:text-sky-500 transition duration-200 ease-in-out'>Privacy Policy</a>
+                <a href="#" className='text-sm hover:text-sky-500 transition duration-200 ease-in-out'>Terms Of Service</a>
+                <a href="#" className='text-sm hover:text-sky-500 transition duration-200 ease-in-out'>Sitemap</a>
+              </div>
             </div>
           </div>
-
-          <div className='flex flex-col md:w-lg lg:w-sm'>
-
-            <h3 className="text-xl font-bold mb-4 text-sky-500">Core Service</h3>
-            <ul className='space-y-2'>
-              {
-                coreService.map((link) => {
-                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
-                    <Link href={link.href}>{link.name}</Link>
-                  </li>
-                })
-              }
-            </ul>
-          </div>
-
-          <div className='flex flex-col md:w-lg lg:w-sm'>
-
-            <h3 className="text-xl font-bold mb-4 text-sky-500">Specialized Testing</h3>
-            <ul className='space-y-2'>
-              {
-                specializedTesting.map((link) => {
-                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
-                    <Link href={link.href}>{link.name}</Link>
-                  </li>
-                })
-              }
-            </ul>
-          </div>
-
-          <div className='flex flex-col w-sm lg:w-sm'>
-
-            <h3 className="text-xl font-bold mb-4 text-sky-500">Company</h3>
-            <ul className='space-y-2'>
-              {
-                quickLinks.map((link) => {
-                  return <li key={link.name} className='transition duration-200 hover:text-sky-500'>
-                    <Link href={link.href}>{link.name}</Link>
-                  </li>
-                })
-              }
-            </ul>
-          </div>
-
-        </div>
-
-        <div className='mt-3'>
-          <hr className='w-full text-sky-500' />
-        </div>
-
-        <div className='flex flex-col md:flex-row text-[#59585B] mt-8 justify-between'>
-
-          <div className='text-center'>
-            <p>&copy; 2024 Testriq QA LAB LLP. All Rights Reserved</p>
-          </div>
-
-          <div className='flex gap-5 justify-center mt-5 md:mt-0'>
-            <a href="#" className='hover:text-sky-500 transition duration-200 ease-in-out'>Privacy Policy</a>
-            <a href="#" className='hover:text-sky-500 transition duration-200 ease-in-out'>Terms Of Service</a>
-            <a href="#" className='hover:text-sky-500 transition duration-200 ease-in-out'>Sitemap</a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+
