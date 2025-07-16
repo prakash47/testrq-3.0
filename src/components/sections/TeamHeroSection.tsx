@@ -13,7 +13,7 @@ const TeamHeroSection = () => {
         <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Exceptional{" "}
           <span className="text-[theme(color.brand.blue)]">
-            Talent <br /> Driving&nbsp;
+            Talent <br className="block 2xl:hidden" /> Driving&nbsp;
           </span>
           Innovation
         </h1>
