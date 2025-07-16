@@ -100,7 +100,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
-      <div className="flex justify-between items-center sm:px-5 md:px-8 py-3 sm:py-4">
+      <div className="flex justify-between items-center  sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
           <Image
