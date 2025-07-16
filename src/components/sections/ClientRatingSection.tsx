@@ -41,7 +41,7 @@ const ClientRatingSection = () => {
         { Comment: "Testriq was a clutch QA partner, providing essential services to meetrigorous regulatory requirements with excellence.", clientName: "Dave Hadden", designation: "Founder and President, Pro-ficiency" },
     ]
     return (
-        <section className='flex flex-col w-full max-w-screen-3xl mx-auto bg-[theme(color.background.gray)] md:px-8 px-8 xl:px-24 py-15  gap-y-6'>
+        <section className='flex flex-col w-full mx-auto bg-[theme(color.background.gray)] md:px-8 px-8 xl:px-24 py-15  gap-y-6'>
             <h2 className="text-4xl font-semibold text-center">{renderTitle()}</h2>
             <p className='text-center text-lg text-gray-500'>{heading.info}</p>
 

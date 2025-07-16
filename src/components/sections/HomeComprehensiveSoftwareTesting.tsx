@@ -39,7 +39,7 @@ const HomeComprehensiveSoftwareTesting = () => {
     ]
     return (
         // Main section container
-        <section className='flex flex-col w-full max-w-screen-2xl bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
+        <section className='flex flex-col w-full bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
