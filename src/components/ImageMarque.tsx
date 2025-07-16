@@ -16,8 +16,21 @@ const images = [
 
 const ImageMarquee = () => {
   return (
-    <section className="relative flex overflow-x-hidden">
+    <section className="relative w-full flex overflow-x-hidden">
       <div className="py-12 animate-marquee whitespace-nowrap">
+        <span className=" text-4xl">
+          {images.map((src, index) => (
+            <Image
+              key={index}
+              src={src}
+              alt={`Company Logo ${index + 1}`}
+              className="inline-block mx-10"
+              width={150}
+              height={50}
+            />
+          ))}
+
+        </span>
         <span className="text-4xl">
           {images.map((src, index) => (
             <Image
@@ -29,6 +42,7 @@ const ImageMarquee = () => {
               height={50}
             />
           ))}
+
         </span>
       </div>
     </section>
