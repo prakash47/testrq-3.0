@@ -23,22 +23,13 @@ interface MenuItem {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
-  const [activeServiceSubmenu, setActiveServiceSubmenu] = useState<number | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null); // State to track active submenu in mobile
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    setActiveSubmenu(null);
-    setActiveServiceSubmenu(null);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const toggleSubmenu = (index: number) => {
+    // If the clicked submenu is already open, close it, otherwise open it
     setActiveSubmenu(activeSubmenu === index ? null : index);
-    setActiveServiceSubmenu(null);
-  };
-
-  const toggleServiceSubmenu = (index: number) => {
-    setActiveServiceSubmenu(activeServiceSubmenu === index ? null : index);
   };
 
   // Define menu items with proper types and links
@@ -48,8 +39,8 @@ const Navbar = () => {
       label: "Company",
       link: "",
       submenu: [
-        { label: "About Us", link: "/about-us" },
-        { label: "Our Team", link: "/our-team" },
+        { label: "About Us", link: "/about" },
+        { label: "Our Team", link: "/team" },
       ],
     },
     {
@@ -122,7 +113,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
-      <div className="flex justify-between items-center  sm:px-5 md:px-8 py-3 sm:py-4">
+      <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
         <Link href="/">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
@@ -151,6 +142,7 @@ const Navbar = () => {
                 <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-35vw+100%)] xl:ml-[calc(-39vw+100%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
                   <div className="w-full mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-4 xl:px-6 ml-8 xl:ml-24">
                     {item.submenu.map((column, colIdx) => {
+                      // Check if the column is of type { heading: string, services: SubmenuItem[] }
                       if ('label' in column && 'link' in column) {
                         return (
                           <div key={colIdx} className="space-y-3 xl:space-y-4">
@@ -163,6 +155,7 @@ const Navbar = () => {
                         );
                       }
 
+                      // If it's the complex object, render the heading and services
                       return (
                         <div key={colIdx} className="space-y-3 xl:space-y-4">
                           <h2 className="text-base xl:text-lg font-semibold text-gray-800">
@@ -206,7 +199,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Tablet Menu Button */}
+        {/* Tablet Menu (simplified horizontal) */}
         <div className="hidden md:flex xl:hidden items-center">
           <button
             className="text-gray-700 text-xl p-2"
@@ -237,220 +230,176 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Tablet Menu */}
+      {/* Tablet Dropdown Menu */}
       {menuOpen && (
-        <div className="hidden md:block xl:hidden">
-          <div className="bg-white border-t shadow-lg max-h-[80vh] overflow-y-auto">
-            <div className="px-6 py-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {menuItems.map((item, idx) => (
-                  <div key={idx} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <Link href={item.link}>
-                        <h3 className="text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
-                          {item.label}
-                        </h3>
-                      </Link>
-                      {item.submenu && (
-                        <button
-                          onClick={() => toggleSubmenu(idx)}
-                          className="text-gray-600 hover:text-[theme(color.brand.blue)] p-1"
-                        >
-                          <MdKeyboardArrowDown 
-                            className={`transition-transform duration-200 ${
-                              activeSubmenu === idx ? "rotate-180" : ""
-                            }`} 
-                          />
-                        </button>
-                      )}
-                    </div>
+        <div className="hidden md:block xl:hidden px-4 pb-4 border-t">
+          <div className="grid grid-cols-2 gap-4 py-4">
+            {menuItems.map((item, idx) => (
+              <div key={idx} className="relative group">
+                <Link href={item.link}>
+                  <div className="flex items-center gap-1 cursor-pointer text-gray-700 hover:text-[theme(color.brand.blue)] p-2 rounded-md hover:bg-gray-50">
+                    <span className="text-md font-medium">{item.label}</span>
+                    {item.submenu && <MdKeyboardArrowDown />}
+                  </div>
+                </Link>
 
-                    {/* Tablet Submenu */}
-                    {item.submenu && activeSubmenu === idx && (
-                      <div className="pl-4 space-y-2 border-l-2 border-blue-100">
-                        {item.label === "Services" ? (
-                          <div className="space-y-3">
-                            {item.submenu.map((column, colIdx) => {
-                              if ('label' in column && 'link' in column) {
-                                return (
-                                  <div key={colIdx}>
-                                    <Link href={column.link}>
-                                      <span className="text-sm font-medium text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer">
-                                        {column.label}
-                                      </span>
-                                    </Link>
-                                  </div>
-                                );
-                              }
-                              return (
-                                <div key={colIdx} className="space-y-2">
-                                  <div className="flex items-center justify-between">
-                                    <h4 className="text-sm font-medium text-gray-800">{column.heading}</h4>
-                                    <button
-                                      onClick={() => toggleServiceSubmenu(colIdx)}
-                                      className="text-gray-500 hover:text-[theme(color.brand.blue)] p-1"
-                                    >
-                                      <MdKeyboardArrowDown 
-                                        className={`w-4 h-4 transition-transform duration-200 ${
-                                          activeServiceSubmenu === colIdx ? "rotate-180" : ""
-                                        }`} 
-                                      />
-                                    </button>
-                                  </div>
-                                  {activeServiceSubmenu === colIdx && (
-                                    <ul className="pl-3 space-y-1 border-l border-gray-200">
-                                      {column.services.map((service, subIdx) => (
-                                        <li key={subIdx}>
-                                          <Link href={service.link}>
-                                            <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer">
-                                              {service.label}
-                                            </span>
-                                          </Link>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <ul className="space-y-1">
-                            {item.submenu.map((subItem, subIdx) => (
-                              <li key={subIdx}>
-                                <Link href={('link' in subItem) ? subItem.link : '#'}>
-                                  <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer">
-                                    {('label' in subItem) ? subItem.label : subItem.heading}
-                                  </span>
+                {/* Tablet Submenu */}
+                {item.submenu && (
+                  <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-64 z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                    {item.label === "Services" && item.submenu ? (
+                      <div className="grid grid-cols-1 gap-2 p-3">
+                        {item.submenu.map((column, colIdx) => {
+                          if ('label' in column && 'link' in column) {
+                            return (
+                              <div key={colIdx} className="py-1">
+                                <Link href={column.link}>
+                                  <h3 className="text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                    {column.label}
+                                  </h3>
                                 </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                              </div>
+                            );
+                          }
+                          return (
+                            <div key={colIdx} className="py-1">
+                              <h3 className="text-sm font-semibold text-gray-700 mb-1">
+                                {column.heading}
+                              </h3>
+                              <ul className="space-y-1 ml-2">
+                                {column.services
+                                  .slice(0, 3)
+                                  .map((service, subIdx) => (
+                                    <li key={subIdx}>
+                                      <Link href={service.link}>
+                                        <span className="block pt-2 text-sm text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                          {service.label}
+                                        </span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                              </ul>
+                            </div>
+                          );
+                        })}
                       </div>
+                    ) : (
+                      <ul className="py-1">
+                        {item.submenu.map((subItem, subIdx) => (
+                          <li key={subIdx}>
+                            <Link href={('link' in subItem) ? subItem.link : '#'}>
+                              <span className="block px-4 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                {('label' in subItem) ? subItem.label : subItem.heading}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     )}
                   </div>
-                ))}
+                )}
               </div>
+            ))}
+          </div>
 
-              <div className="mt-6 pt-4 border-t">
-                <Link href="/contact">
-                  <button className="w-full bg-[#25A8E0] text-white px-4 py-3 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
-                    <span className="text-sm">Talk to Expert</span>
-                    <FaArrowRight className="w-3 h-3" />
-                  </button>
-                </Link>
-              </div>
-            </div>
+          <div className="flex items-center justify-between pt-4 border-t">
+            <Link href="/contact">
+              <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
+                <span className="text-sm">Talk to Expert</span>
+                <FaArrowRight className="w-3 h-3" />
+              </button>
+            </Link>
           </div>
         </div>
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Items */}
       {menuOpen && (
-        <div className="md:hidden">
-          <div className="bg-white border-t shadow-lg max-h-[80vh] overflow-y-auto">
-            <div className="px-4 py-4">
-              <ul className="space-y-3">
-                {menuItems.map((item, idx) => (
-                  <li key={idx} className="border-b border-gray-100 pb-3">
-                    <div className="flex items-center justify-between">
-                      <Link href={item.link}>
-                        <span className="text-base font-medium text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
-                          {item.label}
-                        </span>
-                      </Link>
-                      {item.submenu && (
-                        <button
-                          onClick={() => toggleSubmenu(idx)}
-                          className="text-gray-600 hover:text-[theme(color.brand.blue)] p-2"
-                        >
-                          <MdKeyboardArrowDown 
-                            className={`transition-transform duration-200 ${
-                              activeSubmenu === idx ? "rotate-180" : ""
-                            }`} 
-                          />
-                        </button>
-                      )}
-                    </div>
+        <div className="md:hidden px-4 pb-4">
+          <ul className="space-y-3 text-gray-700">
+            {menuItems.map((item, idx) => (
+              <li
+                key={idx}
+                className="hover:text-[theme(color.brand.blue)] cursor-pointer"
+              >
+                <div
+                  className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50"
+                  onClick={() => item.submenu && toggleSubmenu(idx)} // Toggle submenu visibility on click
+                >
+                  <Link href={item.link}>
+                    <span className="text-base font-medium">{item.label}</span>
+                  </Link>
+                  {item.submenu && (
+                    <MdKeyboardArrowDown
+                      className={`transition-transform ${
+                        activeSubmenu === idx ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
+                </div>
 
-                    {/* Mobile Submenu */}
-                    {item.submenu && activeSubmenu === idx && (
-                      <div className="mt-3 pl-4 space-y-3 border-l-2 border-blue-100">
-                        {item.label === "Services" ? (
-                          <div className="space-y-4">
-                            {item.submenu.map((column, colIdx) => {
-                              if ('label' in column && 'link' in column) {
-                                return (
-                                  <div key={colIdx}>
-                                    <Link href={column.link}>
-                                      <span className="text-sm font-medium text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer">
-                                        {column.label}
+                {/* Submenu for mobile (conditionally render if it's active) */}
+                {item.submenu && activeSubmenu === idx && (
+                  <div className="pl-4 mt-2 space-y-2 bg-gray-50 rounded-md p-3">
+                    {item.label === "Services" && item.submenu ? (
+                      <div className="space-y-3">
+                        {item.submenu.map((column, colIdx) => {
+                          if ('label' in column && 'link' in column) {
+                            return (
+                              <div key={colIdx}>
+                                <Link href={column.link}>
+                                  <h3 className="text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                    {column.label}
+                                  </h3>
+                                </Link>
+                              </div>
+                            );
+                          }
+                          return (
+                            <div key={colIdx}>
+                              <h3 className="text-md font-semibold text-gray-800 mb-2">
+                                {column.heading}
+                              </h3>
+                              <ul className="space-y-1 ml-2">
+                                {column.services.map((service, subIdx) => (
+                                  <li key={subIdx}>
+                                    <Link href={service.link}>
+                                      <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer">
+                                        {service.label}
                                       </span>
                                     </Link>
-                                  </div>
-                                );
-                              }
-                              return (
-                                <div key={colIdx} className="space-y-2">
-                                  <div className="flex items-center justify-between">
-                                    <h4 className="text-sm font-semibold text-gray-800">{column.heading}</h4>
-                                    <button
-                                      onClick={() => toggleServiceSubmenu(colIdx)}
-                                      className="text-gray-500 hover:text-[theme(color.brand.blue)] p-1"
-                                    >
-                                      <MdKeyboardArrowDown 
-                                        className={`w-4 h-4 transition-transform duration-200 ${
-                                          activeServiceSubmenu === colIdx ? "rotate-180" : ""
-                                        }`} 
-                                      />
-                                    </button>
-                                  </div>
-                                  {activeServiceSubmenu === colIdx && (
-                                    <ul className="pl-3 space-y-2 border-l border-gray-200">
-                                      {column.services.map((service, subIdx) => (
-                                        <li key={subIdx}>
-                                          <Link href={service.link}>
-                                            <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer">
-                                              {service.label}
-                                            </span>
-                                          </Link>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <ul className="space-y-2">
-                            {item.submenu.map((subItem, subIdx) => (
-                              <li key={subIdx}>
-                                <Link href={('link' in subItem) ? subItem.link : '#'}>
-                                  <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer">
-                                    {('label' in subItem) ? subItem.label : subItem.heading}
-                                  </span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        })}
                       </div>
+                    ) : (
+                      <ul className="space-y-2">
+                        {item.submenu.map((subItem, subIdx) => (
+                          <li key={subIdx}>
+                            <Link href={('link' in subItem) ? subItem.link : '#'}>
+                              <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-1 cursor-pointer">
+                                {('label' in subItem) ? subItem.label : subItem.heading}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     )}
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
 
-              <div className="mt-6 pt-4 border-t">
-                <Link href="/contact">
-                  <button className="w-full bg-[#25A8E0] text-white px-4 py-3 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
-                    <span className="text-sm">Talk to Expert</span>
-                    <FaArrowRight className="w-3 h-3" />
-                  </button>
-                </Link>
-              </div>
-            </div>
+          <div className="mt-6 flex flex-col gap-4 pt-4 border-t">
+            <Link href="/contact">
+              <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
+                <span className="text-sm">Talk to Expert</span>
+                <FaArrowRight className="w-3 h-3" />
+              </button>
+            </Link>
           </div>
         </div>
       )}
@@ -458,8 +407,9 @@ const Navbar = () => {
   );
 };
 
-
 export default Navbar;
+
+
 
 
 
