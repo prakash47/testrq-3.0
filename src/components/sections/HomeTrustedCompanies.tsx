@@ -1,5 +1,5 @@
 import React from "react";
-import ImageSlider from "../ImageSlider";
+import ImageMarquee from "../ImageMarque";
 
 const Titles = {
   title: "Trusted by Leading Companies",
@@ -27,7 +27,8 @@ const HomeTrustedCompanies = () => {
         quality assurance requirements.
       </p>
 
-      <ImageSlider />
+      
+      <ImageMarquee />
     </section>
   );
 };
