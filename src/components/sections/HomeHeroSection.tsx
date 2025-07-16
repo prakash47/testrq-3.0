@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
+import ImageSlider from "../ImageSlider";
 
 const Hero = () => {
   return (
@@ -63,7 +64,9 @@ const Hero = () => {
       </div>
 
       {/* Right Section */}
-      <div className="my-10 w-full md:[w-1/2] lg:[my-10] bg-white shadow-lg rounded-xl max-w-xl h-80 mx-auto "></div>
+      <div className=" w-full md:[w-1/2] lg:[my-10] max-w-xl mx-auto ">
+      <ImageSlider/>
+      </div>
     </section>
   );
 };

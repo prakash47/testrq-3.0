@@ -3,7 +3,8 @@
 @theme{
   --color-background-gray: #F5F5F5; 
   
-  --color-brand-blue: #0EA5E9; 
+  --color-brand-blue: #25A8E0; 
+  --color-brand-grey: #25A8E0;
 }
 
 :root {
