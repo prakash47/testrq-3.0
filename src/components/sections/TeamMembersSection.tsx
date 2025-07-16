@@ -55,9 +55,9 @@ const TeamMembersSection = () => {
 
   const teamMembers = [
     {
-      name: "Alex Thompson",
-      role: "Senior Automation Engineer",
-      department: "Automation Testing",
+      name: "Sandeep Maske",
+      role: "Founder & CEO",
+      department: "Testriq QA Lab & Cinute Digital",
       experience: "7 Years",
       specialties: ["Selenium", "Python", "CI/CD"],
       gradient: "from-blue-400 to-blue-500",

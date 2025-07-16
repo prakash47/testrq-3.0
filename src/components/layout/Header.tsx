@@ -48,8 +48,8 @@ const Navbar = () => {
       label: "Company",
       link: "",
       submenu: [
-        { label: "About Us", link: "/about" },
-        { label: "Our Team", link: "/team" },
+        { label: "About Us", link: "/about-us" },
+        { label: "Our Team", link: "/our-team" },
       ],
     },
     {
