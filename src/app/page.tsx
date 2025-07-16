@@ -122,12 +122,25 @@ const HomeTrustedCompanies = dynamic(
   }
 );
 
+const HomeProcesses = dynamic(
+  () => import("@/components/sections/HomeProcesses"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function Home() {
   return (
     <div>
       <MainLayout>
         <HomeHeroSection />
         <HomeComprehensiveSoftwareTesting />
+        <HomeProcesses />
         <HomeOurImpact />
         <ClientRatingSection />
         <HomeReadyToElevate />
