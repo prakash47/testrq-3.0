@@ -74,7 +74,7 @@ const ImageSlider = () => {
               priority={index === 0} // Prioritize first image for faster loading
             />
 
-            <Link href={'#'} className='flex justify-center text-2xl text-[theme(color.brand.blue)] ' >{image.text}</Link>
+            {/* <Link href={'#'} className='flex justify-center text-2xl text-[theme(color.brand.blue)] ' >{image.text}</Link> */}
             
           </div>
         ))}
