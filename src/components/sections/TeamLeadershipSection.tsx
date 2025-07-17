@@ -3,6 +3,7 @@ import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { link } from "fs";
+import Home from "./CardSlider";
 
 const TeamLeadershipSection = () => {
   const leaders = [
@@ -131,6 +132,8 @@ const TeamLeadershipSection = () => {
             to quality assurance, driving innovation and excellence across all our services.
           </p>
         </div>
+
+        {/* <Home/> */}
 
         {/* Leaders Grid */}
         <div className="space-y-12">
