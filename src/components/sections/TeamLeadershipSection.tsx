@@ -1,8 +1,7 @@
 import React from "react";
-import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { link } from "fs";
 
 const TeamLeadershipSection = () => {
   const leaders = [
@@ -138,7 +137,7 @@ const TeamLeadershipSection = () => {
               className={`bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
                 }`}
             >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+              <div className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                 }`}>
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -174,14 +173,14 @@ const TeamLeadershipSection = () => {
                 </div>
 
                 {/* Leader Visual */}
-                <div className={`flex justify-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                <div className={`flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                   <div className="relative">
                     
-                      <div className="text-center text-black">
-                        <div className="w-80 h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                      <div className="text-center text-black py-0">
+                        <div className="w-60 h-60 md:w-80 h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                           {leader.img}
                         </div>
-                        <div className="text-2xl font-semibold">{leader.name}</div>
+                        <div className="text-xl font-semibold">{leader.name}</div>
                         <div className="text-md opacity-90">{leader.position}</div>
                       </div>
                   
