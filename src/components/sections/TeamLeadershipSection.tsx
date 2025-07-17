@@ -111,6 +111,8 @@ const TeamLeadershipSection = () => {
               className="object-cover rounded-full"
             />
     },
+    
+    
   ];
 
   return (
