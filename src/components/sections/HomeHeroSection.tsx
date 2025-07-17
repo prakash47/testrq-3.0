@@ -64,7 +64,7 @@ const Hero = () => {
       </div>
 
       {/* Right Section */}
-      <div className=" w-full md:[w-1/2] lg:[my-10] max-w-xl mx-auto ">
+      <div className="w-full mt-20 md:[w-1/2] lg:[my-10] md:my-10 max-w-xl">
       <ImageSlider/>
       </div>
     </section>

@@ -1,5 +1,8 @@
 import React from "react";
-import { FaCode, FaMobile, FaShieldAlt, FaRobot, FaDatabase, FaGlobe } from "react-icons/fa";
+import { FaCode, FaMobile, FaShieldAlt, FaRobot, FaDatabase, FaGlobe, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
+
 
 const TeamMembersSection = () => {
   const departments = [
@@ -55,53 +58,54 @@ const TeamMembersSection = () => {
 
   const teamMembers = [
     {
-      name: "Sandeep Maske",
-      role: "Founder & CEO",
-      department: "Testriq QA Lab & Cinute Digital",
-      experience: "7 Years",
-      specialties: ["Selenium", "Python", "CI/CD"],
-      gradient: "from-blue-400 to-blue-500",
+      name: "Siddharth Desai",
+      role: "Siddharth Desai",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/siddharth-desai-852996201',
+      src: "/siddharth-desai.png",
     },
     {
-      name: "Priya Sharma",
-      role: "Mobile Testing Lead",
-      department: "Mobile Testing",
-      experience: "6 Years",
-      specialties: ["iOS", "Android", "Appium"],
-      gradient: "from-green-400 to-green-500",
+      name: "Mandar Salkar",
+      role: "Customer Success Manager",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/?_l=en_US',
+      src: "/Mandar_Salkar.png",
     },
     {
-      name: "David Kim",
-      role: "Security Testing Specialist",
-      department: "Security Testing",
-      experience: "8 Years",
-      specialties: ["OWASP", "Penetration Testing"],
-      gradient: "from-red-400 to-red-500",
+      name: "Prathamesh Maske",
+      role: "IoT and Mobile QA Architect",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/prathameshmaske/',
+      src: "/prathmesh-maske.png",
     },
     {
-      name: "Maria Garcia",
-      role: "Performance Testing Expert",
-      department: "Performance Testing",
-      experience: "9 Years",
-      specialties: ["JMeter", "Load Testing"],
-      gradient: "from-orange-400 to-orange-500",
+      name: "Aakash Yadav",
+      role: "R&D Innovation Specialist",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/aakashyadav9890/',
+      src: "/aakash-yadav.png",
     },
     {
-      name: "James Wilson",
-      role: "AI Testing Researcher",
-      department: "AI/ML Testing",
-      experience: "5 Years",
-      specialties: ["ML Models", "Data Validation"],
-      gradient: "from-purple-400 to-purple-500",
+      name: "Ami khambhatta",
+      role: "Quality Assurance Architect",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/amikhambhatta/',
+      src: "/ami-khambata.png",
     },
     {
-      name: "Lisa Chen",
-      role: "Manual Testing Lead",
-      department: "Manual Testing",
-      experience: "10 Years",
-      specialties: ["Exploratory", "Usability"],
-      gradient: "from-teal-400 to-teal-500",
+      name: "Neelam Chavan",
+      role: "Financial Controller",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/neelamchavan9892/?original_referer=https%3A%2F%2Ftestriq.com%2F',
+      src: "/neelam-chavan.png",
     },
+    {
+      name: "Elvita Gomes",
+      role: "HR Specialist",
+      department: "Testriq QA Lab",
+      linkedin: 'https://www.linkedin.com/in/elvita07',
+      src: "/elvita-gomes.png",
+    }
   ];
 
   return (
@@ -126,7 +130,7 @@ const TeamMembersSection = () => {
           {departments.map((dept, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+              className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
             >
               <div className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 <dept.icon className="text-white w-8 h-8" />
@@ -174,22 +178,19 @@ const TeamMembersSection = () => {
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="text-center">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${member.gradient} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <span className="text-white text-xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className='w-30 h-25 rounded-full flex items-center justify-center mx-auto mb-4'>
+                    <Image src={member.src} alt="Employees Photo" width={100} height={250} />
+                    
                   </div>
                   
                   <h4 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h4>
                   <div className="text-[theme(color.brand.blue)] font-semibold mb-2">{member.role}</div>
                   <div className="text-gray-600 text-sm mb-3">{member.department}</div>
+                  <Link href={member.linkedin} className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={20}/></Link>
                   
-                  <div className="bg-gray-50 rounded-lg p-3 mb-4">
-                    <div className="text-sm font-semibold text-gray-800 mb-2">Experience</div>
-                    <div className="text-[theme(color.brand.blue)] font-bold">{member.experience}</div>
-                  </div>
                   
-                  <div className="space-y-2">
+                  
+                  {/* <div className="space-y-2">
                     <div className="text-sm font-semibold text-gray-800">Specialties:</div>
                     <div className="flex flex-wrap gap-1 justify-center">
                       {member.specialties.map((specialty, specIndex) => (
@@ -201,7 +202,7 @@ const TeamMembersSection = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -209,7 +210,7 @@ const TeamMembersSection = () => {
         </div>
 
         {/* Team Stats */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+        <div className="bg-white border border-gray-200 shadow-sky-300 rounded-2xl p-8 md:p-12 shadow-lg">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Team <span className="text-[theme(color.brand.blue)]">Excellence</span>
