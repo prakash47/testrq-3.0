@@ -20,8 +20,8 @@ const TeamLeadershipSection = () => {
       img : <Image
               src="/sandeep-maske-img.webp"
               alt="Sandeep Maske"
-              width={190}
-              height={280}
+              width={180}
+              height={250}
               className="object-cover rounded-full"
             />
     },
