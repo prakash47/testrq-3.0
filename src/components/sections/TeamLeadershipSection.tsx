@@ -1,6 +1,8 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
+import { link } from "fs";
 
 const TeamLeadershipSection = () => {
   const leaders = [
@@ -16,42 +18,98 @@ const TeamLeadershipSection = () => {
         "ISTQB Advanced Level Certified",
         "Speaker at 20+ industry conferences"
       ],
-      gradient: "from-blue-500 to-blue-600",
+      linkedin: "https://www.linkedin.com/in/sandeep-maske-qa/",
       img : <Image
               src="/sandeep-maske-img.webp"
               alt="Sandeep Maske"
-              width={180}
+              width={350}
               height={250}
               className="object-cover rounded-full"
             />
     },
     {
-      name: "Michael Chen",
-      position: "Chief Technology Officer",
-      experience: "12+ Years",
-      specialization: "Test Automation & DevOps",
-      bio: "Michael leads our technical innovation, driving the adoption of cutting-edge testing tools and methodologies. His expertise in automation has transformed how we deliver quality assurance.",
+      name: "Santosh Kakade",
+      position: "VP Operations",
+      experience: "17+ Years",
+      specialization: "QA & Digital Solutions",
+      bio: "Santosh Kakade, With 17+ years in QA & digital solutions, lead TESTRIQ QA Lab & Cinute Digital, delivering top-tier testing services and upskilling professionals in tech.",
       achievements: [
         "Led 100+ automation projects",
         "Expert in Selenium, Cypress, Playwright",
         "DevOps and CI/CD specialist",
         "Published 15+ technical articles"
       ],
-      gradient: "from-purple-500 to-purple-600",
+      linkedin: "https://www.linkedin.com/in/santoshkakade/",
+      img : <Image
+              src="/Santosh_Kakade.webp"
+              alt="Santosh_Kakade"
+              width={350}
+              height={250}
+              className="object-cover rounded-full"
+            />
     },
     {
-      name: "Emily Rodriguez",
-      position: "Head of Quality Assurance",
-      experience: "10+ Years",
-      specialization: "Manual Testing & Process Optimization",
-      bio: "Emily ensures our testing processes maintain the highest standards. Her meticulous approach to quality assurance has been instrumental in achieving our 99.8% project success rate.",
+      name: "Goutam_Mishra",
+      position: "Head of QA and BD",
+      experience: "20+ Years",
+      specialization: "Software Testing & Business Development",
+      bio: "Goutam Mishra, With 20+ years in tech, excel in QA, testing, and project management, mentoring QA professionals while ensuring top-tier software quality across platforms.",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
         "Reduced bug leakage by 95%",
         "Mentored 30+ junior testers"
       ],
-      gradient: "from-green-500 to-green-600",
+      linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
+      img : <Image
+              src="/Goutam_Mishra.webp"
+              alt="Goutam_Mishra"
+              width={350}
+              height={250}
+              className="object-cover rounded-full"
+            />
+    },
+    {
+      name: "Rohan Maske",
+      position: "VP - Marketing",
+      experience: "8+ Years",
+      specialization: "Expertise in BD and QA testing",
+      bio: "A results-driven leader with 8+ years of expertise in BD, QA testing, HR, data analysis, talent acquisition & performance marketing, excelling in strategy, resource optimization, and innovation to drive efficiency.",
+      achievements: [
+        "Designed QA processes for 200+ projects",
+        "ISTQB Expert Level Certified",
+        "Reduced bug leakage by 95%",
+        "Mentored 30+ junior testers"
+      ],
+      linkedin: "https://www.linkedin.com/in/rohan-maske/",
+      img : <Image
+              src="/Rohan_Maske.webp"
+              alt="Rohan_Maske"
+              width={350}
+              height={250}
+              className="object-cover rounded-full"
+            />
+    },
+    {
+      name: "Aatish Jadhav",
+      position: "Senior Manager - Strategic Growth",
+      experience: "16+ Years",
+      specialization: "Strategic Innovation Alignment",
+      bio: "Senior Manager at TESTRIQ QA Lab with 16 years of industry experience. Driving strategic growth, aligning projects with innovation & quality, and empowering teams through Agile excellence.",
+      achievements: [
+        "Designed QA processes for 200+ projects",
+        "ISTQB Expert Level Certified",
+        "Reduced bug leakage by 95%",
+        "Mentored 30+ junior testers"
+      ],
+      linkedin: "https://www.linkedin.com/in/aatishjadhav/",
+      img : <Image
+              src="/Aatish_Jadhav.webp"
+              alt="Aatish_Jadhav"
+              width={350}
+              height={250}
+              className="object-cover rounded-full"
+            />
     },
   ];
 
@@ -112,37 +170,27 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Social Links */}
-                  <div className="flex gap-4">
-                    <button className="w-10 h-10 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                      <FaLinkedin className="text-white w-5 h-5" />
-                    </button>
-                    <button className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                      <FaTwitter className="text-white w-5 h-5" />
-                    </button>
-                    <button className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors">
-                      <FaEnvelope className="text-white w-5 h-5" />
-                    </button>
-                  </div>
+                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30}/></Link>
                 </div>
 
                 {/* Leader Visual */}
                 <div className={`flex justify-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                   <div className="relative">
-                    <div className={`w-64 h-64 bg-gradient-to-br ${leader.gradient} rounded-2xl flex items-center justify-center`}>
-                      <div className="text-center text-white">
-                        <div className="w-40 h-40 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    
+                      <div className="text-center text-black">
+                        <div className="w-80 h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                           {leader.img}
                         </div>
-                        <div className="text-lg font-semibold">{leader.name}</div>
-                        <div className="text-sm opacity-90">{leader.position}</div>
+                        <div className="text-2xl font-semibold">{leader.name}</div>
+                        <div className="text-md opacity-90">{leader.position}</div>
                       </div>
-                    </div>
+                  
 
                     {/* Floating Badge */}
-                    <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-3 border">
+                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-[theme(color.brand.blue)]">{leader.experience.split('+')[0]}+</div>
-                        <div className="text-xs text-gray-600">Years</div>
+                        <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                        <div className="text-xs text-gray-100">Years</div>
                       </div>
                     </div>
                   </div>

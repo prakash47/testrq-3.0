@@ -74,7 +74,7 @@ const techStack = {
           name: "JMeter",
           icon: (
             <Image
-              src="/JMeter_Logo.png"
+              src="/JMeter_Logo.svg"
               alt="JMeter Logo"
               width={20}
               height={20}
@@ -191,7 +191,7 @@ const techStack = {
             className="object-contain"
           /> },
         { name: "Veracode", icon: <Image
-            src="/Veracode_Logo.png"
+            src="/VeraCode_Logo.png"
             alt="Veracode Logo"
             width={20}
             height={20}
