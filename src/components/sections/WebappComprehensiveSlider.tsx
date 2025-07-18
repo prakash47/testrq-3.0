@@ -48,7 +48,7 @@ const testingServices: FeatureSet[] = [
       "Data Protection Validation",
       "XSS Prevention Testing",
     ],
-    bgColor: "bg-gradient-to-br from-red-600 to-pink-600",
+    bgColor: "bg-blue-100/80",
     btnText: "Learn More About Security Testing",
   },
   {
@@ -73,7 +73,7 @@ const testingServices: FeatureSet[] = [
       "Scalability Analysis",
       "Response Time Optimization",
     ],
-    bgColor: "bg-gradient-to-br from-green-600 to-emerald-600",
+    bgColor: "bg-green-100/80",
     btnText: "Learn More About Performance Testing",
   },
   {
@@ -94,9 +94,11 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "92%" },
       { label: "Duration", value: "2-3 days" },
     ],
+    processLabel: "Performance Testing Process",
+    processDescription: "Comprehensive performance testing workflow",
     progress: "92%",
     icon: <FaUsers />,
-    bgColor: "bg-gradient-to-br from-purple-600 to-purple-800",
+    bgColor: "bg-yellow-100/80",
     btnText: "Learn More About Usability Testing",
   },
   {
@@ -117,9 +119,11 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "96%" },
       { label: "Duration", value: "1-2 days" },
     ],
+    processLabel: "Performance Testing Process",
+    processDescription: "Comprehensive performance testing workflow",
     progress: "96%",
     icon: <FaMobileAlt />,
-    bgColor: "bg-gradient-to-br from-cyan-700 to-teal-600",
+    bgColor: "bg-purple-100/80",
     btnText: "Learn More About Responsive Testing",
   },
   {
@@ -140,9 +144,11 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "94%" },
       { label: "Duration", value: "3-4 days" },
     ],
+    processLabel: "Performance Testing Process",
+    processDescription: "Comprehensive performance testing workflow",
     progress: "94%",
     icon: <FaPlug />,
-    bgColor: "bg-gradient-to-br from-orange-700 to-amber-500",
+    bgColor: "bg-red-100/80",
     btnText: "Learn More About Integration Testing",
   },
 ];
@@ -159,15 +165,15 @@ export default function ComprehensiveTestingSlider() {
   const current = testingServices[index];
 
   return (
-    <div className="relative px-8 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
+    <div className="relative px-8 md:px-12 lg:px-24 py-12 w-full max-w-7xl mx-auto">
       <div
-        className={`rounded-3xl p-8 md:p-12 text-white transition-all duration-300 ${current.bgColor}`}
+        className={`rounded-3xl p-8 md:p-12 text-black transition-all duration-300 ${current.bgColor}`}
       >
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <button
             onClick={prev}
-            className="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30"
+            className="w-10 h-10 flex items-center justify-center bg-black/20 rounded-full hover:bg-white/30"
           >
             <FaChevronLeft className="w-5 h-5" />
           </button>
@@ -177,7 +183,7 @@ export default function ComprehensiveTestingSlider() {
               <span
                 key={i}
                 className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  i === index ? "bg-white" : "bg-white/40"
+                  i === index ? "bg-gray-500" : "bg-gray-300"
                 }`}
               />
             ))}
@@ -201,11 +207,11 @@ export default function ComprehensiveTestingSlider() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold">{current.title}</h2>
-                <p className="text-lg text-white/80">{current.subtitle}</p>
+                <p className="text-lg text-black/80">{current.subtitle}</p>
               </div>
             </div>
 
-            <p className="mb-6 text-white/90">{current.description}</p>
+            <p className="mb-6 text-black/90">{current.description}</p>
 
             <ul className="grid grid-cols-2 gap-2 text-sm list-disc list-inside">
               {current.features.map((feat, i) => (
@@ -226,7 +232,7 @@ export default function ComprehensiveTestingSlider() {
                 {current.stats.map((stat, i) => (
                   <div key={i}>
                     <div className="text-2xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
+                    <div className="text-sm text-black/80">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -240,7 +246,7 @@ export default function ComprehensiveTestingSlider() {
                     <h4 className="font-semibold text-lg">
                       {current.processLabel}
                     </h4>
-                    <p className="text-sm text-white/80">
+                    <p className="text-sm text-black/80">
                       {current.processDescription}
                     </p>
                   </div>
@@ -252,7 +258,7 @@ export default function ComprehensiveTestingSlider() {
                   </div>
                   <div className="w-full h-3 bg-white/20 rounded-full mt-1">
                     <div
-                      className="h-3 bg-white rounded-full"
+                      className="h-3 bg-black rounded-full"
                       style={{ width: current.progress }}
                     ></div>
                   </div>
