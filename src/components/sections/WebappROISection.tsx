@@ -45,7 +45,7 @@ const roiStats = [
 
 export default function WebappROISection() {
   return (
-    <section className="px-8 md:px-12 lg:px-24 py-20 bg-[theme(color.background.gray)]">
+    <section className="px-8 md:px-12 lg:px-24 py-16 bg-[theme(color.background.gray)]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
         {/* Left Content */}
         <div className="flex-1">

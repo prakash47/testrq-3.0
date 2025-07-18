@@ -64,7 +64,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center mb-16">
         <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] font-medium text-sm px-4 py-1 rounded-full mb-4">
@@ -76,7 +76,7 @@ export default function CaseStudies() {
             Web App Testing Projects
           </span>
         </h2>
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
           Discover how our comprehensive web application testing services have
           helped businesses across various industries achieve their quality and
           performance goals.
@@ -84,7 +84,7 @@ export default function CaseStudies() {
       </div>
 
       {/* Case Study Cards */}
-      <div className="grid gap-16 px-6 md:px-12 lg:px-24">
+      <div className="grid gap-16">
         {caseStudies.map((study, idx) => {
           const isReversed = idx % 2 !== 0;
           const layoutClass = isReversed

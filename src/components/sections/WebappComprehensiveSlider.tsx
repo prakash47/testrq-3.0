@@ -36,7 +36,7 @@ const testingServices: FeatureSet[] = [
     stats: [
       { label: "Tests Run", value: "200+" },
       { label: "Coverage", value: "99%" },
-      { label: "Duration", value: "4-5 days" },
+      { label: "Days", value: "4-5" },
     ],
     processLabel: "Security Testing Process",
     processDescription: "Comprehensive security testing workflow",
@@ -62,7 +62,7 @@ const testingServices: FeatureSet[] = [
     stats: [
       { label: "Tests Run", value: "300+" },
       { label: "Coverage", value: "95%" },
-      { label: "Duration", value: "3-4 days" },
+      { label: "Days", value: "3-4" },
     ],
     processLabel: "Performance Testing Process",
     processDescription: "Comprehensive performance testing workflow",
@@ -95,7 +95,7 @@ const testingServices: FeatureSet[] = [
     stats: [
       { label: "Tests Run", value: "150+" },
       { label: "Coverage", value: "92%" },
-      { label: "Duration", value: "2-3 days" },
+      { label: "Days", value: "2-3" },
     ],
     processLabel: "Performance Testing Process",
     processDescription: "Comprehensive performance testing workflow",
@@ -121,7 +121,7 @@ const testingServices: FeatureSet[] = [
     stats: [
       { label: "Tests Run", value: "400+" },
       { label: "Coverage", value: "96%" },
-      { label: "Duration", value: "1-2 days" },
+      { label: "Days", value: "1-2" },
     ],
     processLabel: "Performance Testing Process",
     processDescription: "Comprehensive performance testing workflow",
@@ -147,7 +147,7 @@ const testingServices: FeatureSet[] = [
     stats: [
       { label: "Tests Run", value: "250+" },
       { label: "Coverage", value: "94%" },
-      { label: "Duration", value: "3-4 days" },
+      { label: "Days", value: "3-4" },
     ],
     processLabel: "Performance Testing Process",
     processDescription: "Comprehensive performance testing workflow",
@@ -171,7 +171,7 @@ export default function ComprehensiveTestingSlider() {
   const current = testingServices[index];
 
   return (
-    <div className="relative px-8 md:px-12 lg:px-24 py-12 w-full max-w-7xl mx-auto">
+    <div className="relative px-8 md:px-12 lg:px-24 py-16 w-full mx-auto bg-[theme(color.background.gray)]">
       <div
         className={`rounded-3xl p-8 md:p-12 text-black transition-all duration-300 ${current.bgColor}`}
       >
@@ -204,7 +204,7 @@ export default function ComprehensiveTestingSlider() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
           {/* Left Column */}
           <div>
             <div className="flex items-center gap-4 mb-4">
@@ -234,15 +234,17 @@ export default function ComprehensiveTestingSlider() {
           <div className="space-y-6">
             <div className="rounded-xl p-6 bg-white/10">
               <h4 className="text-xl font-bold mb-4">Service Statistics</h4>
-              <div className="grid grid-cols-3 gap-4 text-center">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {current.stats.map((stat, i) => (
-                  <div key={i}>
-                    <div className="text-2xl font-bold">{stat.value}</div>
+                  <div key={i} className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-center sm:text-left">
+                    <div className="text-3xl font-bold text-black">{stat.value}</div>
                     <div className="text-sm text-black/80">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
+
 
             {current.processLabel && current.progress && (
               <div className="rounded-xl p-6 bg-white/10">
@@ -258,17 +260,17 @@ export default function ComprehensiveTestingSlider() {
                   </div>
                 </div>
                 <div>
-  <div className="flex justify-between text-sm">
-    <span>Progress</span>
-    <span>{current.progress}</span>
-  </div>
-  <div className="w-full h-3 bg-white/80 rounded-full mt-1">
-    <div
-      className={`h-3 rounded-full ${current.elColor}`} // Use the pre-defined class name
-      style={{ width: current.progress }}
-    ></div>
-  </div>
-</div>
+                  <div className="flex justify-between text-sm">
+                    <span>Progress</span>
+                    <span>{current.progress}</span>
+                  </div>
+                  <div className="w-full h-3 bg-white/80 rounded-full mt-1">
+                    <div
+                      className={`h-3 rounded-full ${current.elColor}`} // Use the pre-defined class name
+                      style={{ width: current.progress }}
+                    ></div>
+                  </div>
+                </div>
 
               </div>
             )}

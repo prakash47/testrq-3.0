@@ -129,7 +129,7 @@ const testingServices: TestingCard[] = [
 
 export default function TestingServicesSection() {
   return (
-    <section className="bg-[theme(color.background.gray)] py-20 px-8 md:px-12 lg:px-24">
+    <section className="bg-[theme(color.background.gray)] py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] font-medium text-sm px-4 py-2 rounded-full mb-4">
           Our Web App Testing Services

@@ -56,7 +56,7 @@ const features = [
 
 export default function WebappWhyChooseTestriq() {
   return (
-    <section className="px-8 md:px-12 lg:px-24 py-20 bg-white relative overflow-hidden">
+    <section className="px-8 md:px-12 lg:px-24 py-16 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <div className="inline-block px-4 py-1 text-sm font-medium bg-blue-100 text-[theme(color.brand.blue)] rounded-full mb-3">
           ● Benefits & Results
@@ -73,7 +73,7 @@ export default function WebappWhyChooseTestriq() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {features.map(
           ({ title, icon, desc, badge, badgeColor, cardColor }, i) => (
             <div

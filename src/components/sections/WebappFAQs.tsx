@@ -38,9 +38,9 @@ export default function WebappFAQs() {
   };
 
   return (
-    <section className="bg-[#f9fafb] py-20">
+    <section className="bg-[#f9fafb] py-16 px-8 md:px-12 lg:px-24">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-24 text-center mb-14">
+      <div className="max-w-4xl mx-auto text-center mb-14">
         <span className="inline-flex items-center gap-2 px-4 py-1 text-sm font-medium rounded-full bg-blue-100 text-[theme(color.brand.blue)]">
           <span className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full" />
           Frequently Asked Questions
@@ -58,7 +58,7 @@ export default function WebappFAQs() {
       </div>
 
       {/* FAQ Section */}
-      <div className="max-w-5xl mx-auto px-6 space-y-4">
+      <div className="max-w-5xl mx-auto space-y-4">
         {faqs.map((item, index) => (
           <div
             key={index}
