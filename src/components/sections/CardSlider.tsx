@@ -5,6 +5,11 @@ import { useState, useEffect, act } from "react";
 export default function CardSlider() {
     const [activeCard, setActiveCard] = useState(0);
     const [autoHover, setAutoHover] = useState(true);
+
+    const headings = {
+        title: 'Systematic 6-Steps Testing Methodolgy', info: 'Our proven methodology ensures comprehensive testing coverage, efficient issue detection, and reliable web application performance through systematic execution.'
+    }
+
     const cards = [
         {
             title: "Discovery & Analysis",
@@ -72,10 +77,32 @@ export default function CardSlider() {
         setAutoHover(false);
     };
 
+     // Split the title into parts to style "6-Step" in blue
+    const renderTitle = () => {
+        const titleParts = headings.title.split('6-Steps');
+        return (
+            <>
+                {titleParts[0]}
+                <span className="text-[theme(color.brand.blue)]">6-Steps</span>
+                {titleParts[1]}
+            </>
+        );
+    };
+
+
+
     return (
-        <div className="flex flex-col md:flex-row justify-center items-start md:p-6 bg-gray-100 min-h-screen">
-            <div className="hidden md:block w-full md:w-1/2 space-y-4 relative"> {/* Increased space-y from 4 to 6 */}
-                {/* <div className="absolute left-0 top-0 bottom-0 w-2 bg-gray-200">
+        <section className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
+
+            <div className="text-center leading-16">
+                <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
+                <p className="text-gray-500">{headings.info}</p>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
+
+
+                <div className="hidden md:block w-full md:w-1/2 space-y-4 relative"> {/* Increased space-y from 4 to 6 */}
+                    {/* <div className="absolute left-0 top-0 bottom-0 w-2 bg-gray-200">
                     <div
                         className={`absolute left-0 top-0 w-full transition-all duration-300`}
                         style={{
@@ -84,140 +111,140 @@ export default function CardSlider() {
                         }}
                     ></div>
                 </div> */}
-                <div className="space-y-10 ">
-                    {cards.map((card, index) => (
-                        <div
-                            key={index}
-                            className={`p-4 rounded-lg shadow-md cursor-pointer  ring ring-gray-300 transition-all duration-300 ${activeCard === index
-                                ? `scale-105 transition-all duration-500 ease-in-out shadow-xl border-2 border-black bg-${cards[activeCard].colorlight}`
-                                : `bg-white hover:shadow-lg hover:border-${cards[activeCard].colordark}`
-                                }`}
-                            onMouseEnter={() => setActiveCard(index)}
-                            onClick={() => handleCardClick(index)}
-                        >
-                            <div className="flex justify-between items-center">
-                                
-                                <h2 className="text-xl font-semibold">{card.title}</h2>
-                                <p className="p-1 px-2 text-xs font-semibold bg-gray-200 rounded-xl text-gray-600">{card.days}</p>
+                    <div className="space-y-10 ">
+                        {cards.map((card, index) => (
+                            <div
+                                key={index}
+                                className={`p-4 rounded-lg shadow-md cursor-pointer  ring ring-gray-300 transition-all duration-300 ${activeCard === index
+                                    ? `scale-105 transition-all duration-500 ease-in-out shadow-xl border-2 border-black bg-${cards[activeCard].colorlight}`
+                                    : `bg-white hover:shadow-lg hover:border-${cards[activeCard].colordark}`
+                                    }`}
+                                onMouseEnter={() => setActiveCard(index)}
+                                onClick={() => handleCardClick(index)}
+                            >
+                                <div className="flex justify-between items-center">
+
+                                    <h2 className="text-xl font-semibold">{card.title}</h2>
+                                    <p className="p-1 px-2 text-xs font-semibold bg-gray-200 rounded-xl text-gray-600">{card.days}</p>
+                                </div>
+
+                                <p className={` ${activeCard === index
+                                    ? `text-${cards[activeCard].colordark}`
+                                    : `hover:border-${card.colordark}`
+                                    }`}>
+                                    {card.quote}
+                                </p>
+
+                                <p className="text-gray-700 mt-2">{card.content}</p>
                             </div>
-
-                            <p className={` ${activeCard === index
-                                ? `text-${cards[activeCard].colordark}`
-                                : `hover:border-${card.colordark}`
-                                }`}>
-                                {card.quote}
-                            </p>
-
-                            <p className="text-gray-700 mt-2">{card.content}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            {/* Right Section */}
-            <div className={`hidden md:block w-full md:w-1/2 mt-6 md:mt-0 md:ml-15`}>
-                <div className={`p-6 rounded-lg shadow-xl border bg-${cards[activeCard].colorlight}  bg-opacity-50`}>
-                    <div className="flex items-center">
-                        <div className={`p-1 md:p-3 rounded-xl bg-${cards[activeCard].colordark}`}>
-                            {cards[activeCard].icon}
-                        </div>
-                        <div className=" px-5">
-                            <h2 className={`text-xl md:text-3xl font-extrabold`}>{cards[activeCard].title}</h2>
-                            <p className={`mt-2 text-xl font-semibold text-${cards[activeCard].colordark}`}>
-                                {cards[activeCard].quote}
-                            </p>
-                        </div>
+                        ))}
                     </div>
+                </div>
+                {/* Right Section */}
+                <div className={`hidden md:block w-full md:w-1/2 mt-6 md:mt-0 md:ml-15`}>
+                    <div className={`p-6 rounded-lg shadow-xl border bg-${cards[activeCard].colorlight}  bg-opacity-50`}>
+                        <div className="flex items-center">
+                            <div className={`p-1 md:p-3 rounded-xl bg-${cards[activeCard].colordark}`}>
+                                {cards[activeCard].icon}
+                            </div>
+                            <div className=" px-5">
+                                <h2 className={`text-xl md:text-3xl font-extrabold`}>{cards[activeCard].title}</h2>
+                                <p className={`mt-2 text-xl font-semibold text-${cards[activeCard].colordark}`}>
+                                    {cards[activeCard].quote}
+                                </p>
+                            </div>
+                        </div>
 
-                    <p className="text-gray-600 text-lg mt-5">{cards[activeCard].content}</p>
+                        <p className="text-gray-600 text-lg mt-5">{cards[activeCard].content}</p>
 
-                    
+
                         <div className="flex flex-col leading-8 mt-5">
                             <h4 className="text-xl font-semibold mx-2">{cards[activeCard].keyTitle}</h4>
                             <div>
                                 {cards[activeCard].keys.map((item, idx) => (
-                                <div key={idx} className="flex flex-row items-center">
-                                    <span className={`bg-${cards[activeCard].colordark} p-2 rounded-xl mx-2`}></span>
-                                    <p className="text-gray-700">{item.key}</p>
-                                </div>
-                            ))}
+                                    <div key={idx} className="flex flex-row items-center">
+                                        <span className={`bg-${cards[activeCard].colordark} p-2 rounded-xl mx-2`}></span>
+                                        <p className="text-gray-700">{item.key}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    
 
-                    <div className="mt-4 bg-white rounded-3xl p-4">
-                        <div className="flex justify-between items-center">
-                            <p className="text-lg font-semibold text-gray-600">Overall Progress</p>
-                        <p className={`text-md font-semibold mt-1 text-${cards[activeCard].colordark}`}>{cards[activeCard].progress}</p>
-                        </div>
-                        <div className="w-full mt-2 bg-gray-200 rounded-full h-3.5">
-                            <div
-                                className={`bg-${cards[activeCard].colordark} h-3.5 rounded-full`}
-                                style={{ width: cards[activeCard].progress }}
-                            ></div>
-                        </div>
-                        
-                    </div>
-                    <button className={`mt-4 w-full bg-${cards[activeCard].colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
-                        Learn More About {cards[activeCard].title}
-                    </button>
-                </div>
-            </div>
 
-            {/* mobile view */}
-            <div className={`md:hidden mt-6 md:mt-0 md:ml-15 space-y-6`}>
-                {
-                    cards.map((card)=>{
-                        return <div key={card.title} className={`w-full p-6 rounded-lg shadow-xl ring-${card.colordark} bg-${card.colorlight}  bg-opacity-50`}>
-                    <div className="flex items-center">
-                        <div className={`p-1 md:p-3 rounded-xl bg-${card.colordark}`}>
-                            {card.icon}
-                        </div>
-                        <div className=" px-5">
-                            <h2 className={`text-xl md:text-3xl font-extrabold`}>{card.title}</h2>
-                            <p className={`mt-2 text-xl font-semibold text-${card.colordark}`}>
-                                {card.quote}
-                            </p>
-                        </div>
-                    </div>
-
-                    <p className="text-gray-600 text-lg mt-5">{card.content}</p>
-
-                    
-                        <div className="flex flex-col md:leading-8 mt-5">
-                            <h4 className="text-xl font-semibold mx-2">{card.keyTitle}</h4>
-                            <div>
-                                {cards[activeCard].keys.map((item, idx) => (
-                                <div key={idx} className="flex flex-row items-center mt-2">
-                                    <span className={`bg-${card.colordark} p-2 rounded-xl mx-2`}></span>
-                                    <p className="text-gray-700">{item.key}</p>
-                                </div>
-                            ))}
+                        <div className="mt-4 bg-white rounded-3xl p-4">
+                            <div className="flex justify-between items-center">
+                                <p className="text-lg font-semibold text-gray-600">Overall Progress</p>
+                                <p className={`text-md font-semibold mt-1 text-${cards[activeCard].colordark}`}>{cards[activeCard].progress}</p>
                             </div>
-                        </div>
-                    
+                            <div className="w-full mt-2 bg-gray-200 rounded-full h-3.5">
+                                <div
+                                    className={`bg-${cards[activeCard].colordark} h-3.5 rounded-full`}
+                                    style={{ width: cards[activeCard].progress }}
+                                ></div>
+                            </div>
 
-                    <div className="mt-4 bg-white rounded-3xl p-4">
-                        <div className="flex justify-between items-center">
-                            <p className="text-lg font-semibold text-gray-600">Overall Progress</p>
-                        <p className={`text-md font-semibold mt-1 text-${card.colordark}`}>{cards[activeCard].progress}</p>
                         </div>
-                        <div className="w-full mt-2 bg-gray-200 rounded-full h-3.5">
-                            <div
-                                className={`bg-${card.colordark} h-3.5 rounded-full`}
-                                style={{ width: card.progress }}
-                            ></div>
-                        </div>
-                        
+                        <button className={`mt-4 w-full bg-${cards[activeCard].colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
+                            Learn More About {cards[activeCard].title}
+                        </button>
                     </div>
-                    <button className={`mt-4 w-full bg-${card.colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
-                        Learn More About {card.title}
-                    </button>
                 </div>
-                    })
-                }
-            </div>
-            
 
-        </div>
+                {/* mobile view */}
+                <div className={`md:hidden mt-6 md:mt-0 md:ml-15 space-y-6`}>
+                    {
+                        cards.map((card) => {
+                            return <div key={card.title} className={`w-full p-6 rounded-lg shadow-xl ring-${card.colordark} bg-${card.colorlight}  bg-opacity-50`}>
+                                <div className="flex items-center">
+                                    <div className={`p-1 md:p-3 rounded-xl bg-${card.colordark}`}>
+                                        {card.icon}
+                                    </div>
+                                    <div className=" px-5">
+                                        <h2 className={`text-xl md:text-3xl font-extrabold`}>{card.title}</h2>
+                                        <p className={`mt-2 text-xl font-semibold text-${card.colordark}`}>
+                                            {card.quote}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p className="text-gray-600 text-lg mt-5">{card.content}</p>
+
+
+                                <div className="flex flex-col md:leading-8 mt-5">
+                                    <h4 className="text-xl font-semibold mx-2">{card.keyTitle}</h4>
+                                    <div>
+                                        {cards[activeCard].keys.map((item, idx) => (
+                                            <div key={idx} className="flex flex-row items-center mt-2">
+                                                <span className={`bg-${card.colordark} p-2 rounded-xl mx-2`}></span>
+                                                <p className="text-gray-700">{item.key}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+
+                                <div className="mt-4 bg-white rounded-3xl p-4">
+                                    <div className="flex justify-between items-center">
+                                        <p className="text-lg font-semibold text-gray-600">Overall Progress</p>
+                                        <p className={`text-md font-semibold mt-1 text-${card.colordark}`}>{cards[activeCard].progress}</p>
+                                    </div>
+                                    <div className="w-full mt-2 bg-gray-200 rounded-full h-3.5">
+                                        <div
+                                            className={`bg-${card.colordark} h-3.5 rounded-full`}
+                                            style={{ width: card.progress }}
+                                        ></div>
+                                    </div>
+
+                                </div>
+                                <button className={`mt-4 w-full bg-${card.colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
+                                    Learn More About {card.title}
+                                </button>
+                            </div>
+                        })
+                    }
+                </div>
+
+            </div>
+        </section>
     );
 }
