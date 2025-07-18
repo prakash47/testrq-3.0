@@ -23,6 +23,13 @@ const caseStudies = [
       "70% improvement in page load times",
       "45% reduction in cart abandonment",
     ],
+    color: {
+      circleBg: "bg-blue-500",
+      tagBg: "bg-blue-100 text-blue-600",
+      tagText: "text-blue-600",
+      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      highlightText: "text-blue-600",
+    },
   },
   {
     industry: "EDUCATION",
@@ -45,6 +52,13 @@ const caseStudies = [
       "100% compliance with educational data standards",
       "Zero security vulnerabilities identified post-launch",
     ],
+    color: {
+      circleBg: "bg-green-500",
+      tagBg: "bg-green-100 text-green-600",
+      tagText: "text-green-600",
+      buttonColor: "bg-green-600 hover:bg-green-700",
+      highlightText: "text-green-600",
+    },
   },
 ];
 
@@ -76,24 +90,6 @@ export default function CaseStudies() {
           const layoutClass = isReversed
             ? "lg:flex-row-reverse"
             : "lg:flex-row";
-          const circleBg =
-            study.industry === "E-COMMERCE" ? "bg-blue-500" : "bg-green-500";
-          const tagBg =
-            study.industry === "E-COMMERCE"
-              ? "bg-blue-100 text-blue-600"
-              : "bg-green-100 text-green-600";
-          const tagText =
-            study.industry === "E-COMMERCE"
-              ? "text-blue-600"
-              : "text-green-600";
-          const buttonColor =
-            study.industry === "E-COMMERCE"
-              ? "bg-blue-600 hover:bg-blue-700"
-              : "bg-green-600 hover:bg-green-700";
-          const highlightText =
-            study.industry === "E-COMMERCE"
-              ? "text-blue-600"
-              : "text-green-600";
 
           return (
             <div
@@ -103,10 +99,12 @@ export default function CaseStudies() {
               {/* Main Card */}
               <div className="flex-1 p-6 shadow-md rounded-xl bg-white border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-3 rounded-xl ${tagBg}`}>{study.icon}</div>
+                  <div className={`p-3 rounded-xl ${study.color.circleBg}`}>
+                    {study.icon}
+                  </div>
                   <div>
                     <h4
-                      className={`text-xs font-semibold uppercase ${tagText}`}
+                      className={`text-xs font-semibold uppercase ${study.color.tagText}`}
                     >
                       {study.industry}
                     </h4>
@@ -156,7 +154,7 @@ export default function CaseStudies() {
               <div className="w-full max-w-sm p-6 bg-blue-50 rounded-xl shadow-sm">
                 <div className="flex flex-col items-center text-center gap-4">
                   <div
-                    className={`w-16 h-16 flex items-center justify-center rounded-full ${circleBg}`}
+                    className={`w-16 h-16 flex items-center justify-center rounded-full ${study.color.circleBg}`}
                   >
                     {study.icon}
                   </div>
@@ -166,13 +164,13 @@ export default function CaseStudies() {
                   {study.highlights.map((point, i) => (
                     <div
                       key={i}
-                      className={`w-full py-2 px-4 text-sm font-medium rounded-md bg-white ${highlightText}`}
+                      className={`w-full py-2 px-4 text-sm font-medium rounded-md bg-white ${study.color.highlightText}`}
                     >
                       {point}
                     </div>
                   ))}
                   <button
-                    className={`mt-2 px-5 py-2 rounded-md text-white font-semibold text-sm flex items-center justify-center gap-2 ${buttonColor}`}
+                    className={`mt-2 px-5 py-2 rounded-md text-white font-semibold text-sm flex items-center justify-center gap-2 ${study.color.buttonColor}`}
                   >
                     View Full Case Study
                     <span className="ml-1">→</span>

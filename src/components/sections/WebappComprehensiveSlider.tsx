@@ -20,6 +20,7 @@ type FeatureSet = {
   progress?: string;
   features: string[];
   bgColor?: string;
+  elColor?: string;
   theme?: string;
   btnText?: string;
   learnMoreLabel?: string;
@@ -49,6 +50,7 @@ const testingServices: FeatureSet[] = [
       "XSS Prevention Testing",
     ],
     bgColor: "bg-blue-100/80",
+    elColor: "bg-blue-400",
     btnText: "Learn More About Security Testing",
   },
   {
@@ -74,6 +76,7 @@ const testingServices: FeatureSet[] = [
       "Response Time Optimization",
     ],
     bgColor: "bg-green-100/80",
+    elColor: "bg-green-400",
     btnText: "Learn More About Performance Testing",
   },
   {
@@ -99,6 +102,7 @@ const testingServices: FeatureSet[] = [
     progress: "92%",
     icon: <FaUsers />,
     bgColor: "bg-yellow-100/80",
+    elColor: "bg-yellow-400",
     btnText: "Learn More About Usability Testing",
   },
   {
@@ -124,6 +128,7 @@ const testingServices: FeatureSet[] = [
     progress: "96%",
     icon: <FaMobileAlt />,
     bgColor: "bg-purple-100/80",
+    elColor: "bg-purple-400",
     btnText: "Learn More About Responsive Testing",
   },
   {
@@ -149,6 +154,7 @@ const testingServices: FeatureSet[] = [
     progress: "94%",
     icon: <FaPlug />,
     bgColor: "bg-red-100/80",
+    elColor: "bg-red-400",
     btnText: "Learn More About Integration Testing",
   },
 ];
@@ -252,17 +258,18 @@ export default function ComprehensiveTestingSlider() {
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-sm">
-                    <span>Progress</span>
-                    <span>{current.progress}</span>
-                  </div>
-                  <div className="w-full h-3 bg-white/20 rounded-full mt-1">
-                    <div
-                      className="h-3 bg-black rounded-full"
-                      style={{ width: current.progress }}
-                    ></div>
-                  </div>
-                </div>
+  <div className="flex justify-between text-sm">
+    <span>Progress</span>
+    <span>{current.progress}</span>
+  </div>
+  <div className="w-full h-3 bg-white/80 rounded-full mt-1">
+    <div
+      className={`h-3 rounded-full ${current.elColor}`} // Use the pre-defined class name
+      style={{ width: current.progress }}
+    ></div>
+  </div>
+</div>
+
               </div>
             )}
           </div>
