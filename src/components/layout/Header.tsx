@@ -76,7 +76,7 @@ const Navbar = () => {
             },
             {
               label: "Desktop Application Testing",
-              link: "/services/desktop-application-testing",
+              link: "/services/desktop-application-testing-service",
             },
             {
               label: "Mobile Application Testing",
