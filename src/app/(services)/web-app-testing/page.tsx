@@ -119,7 +119,7 @@ const WebappComprehensiveSlider = dynamic(
 );
 
 const CardSlider = dynamic(
-  () => import("@/components/sections/CardSlider"),
+  () => import("@/components/sections/WebAppCardSlider"),
   {
     ssr: true,
     loading: () => (

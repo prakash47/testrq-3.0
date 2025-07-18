@@ -65,24 +65,24 @@ const Navbar = () => {
         {
           heading: "Testing Services",
           services: [
-            { label: "LaunchFast QA", link: "/services/launchfast-qa" },
+            { label: "LaunchFast QA", link: "/launchfast-qa" },
             {
               label: "Exploratory Testing",
-              link: "/services/exploratory-testing",
+              link: "/exploratory-testing",
             },
             {
               label: "Web Application Testing",
-              link: "/services/web-app-testing",
+              link: "/web-app-testing",
             },
             {
               label: "Desktop Application Testing",
-              link: "/services/desktop-application-testing",
+              link: "/desktop-application-testing",
             },
             {
               label: "Mobile Application Testing",
-              link: "/services/mobile-application-testing",
+              link: "/mobile-application-testing",
             },
-            { label: "API Testing", link: "/services/api-testing" },
+            { label: "API Testing", link: "/api-testing" },
           ],
         },
         {
@@ -90,58 +90,58 @@ const Navbar = () => {
           services: [
             {
               label: "IoT Device Testing",
-              link: "/services/iot-device-testing",
+              link: "/iot-device-testing",
             },
             {
               label: "AI Application Testing",
-              link: "/services/ai-application-testing",
+              link: "/ai-application-testing",
             },
-            { label: "Robotics Testing", link: "/services/robotics-testing" },
+            { label: "Robotics Testing", link: "/robotics-testing" },
             {
               label: "Smart Device Testing",
-              link: "/services/smart-device-testing",
+              link: "/smart-device-testing",
             },
-            { label: "ETL Testing", link: "/services/etl-testing" },
-            { label: "Security Testing", link: "/services/security-testing" },
+            { label: "ETL Testing", link: "/etl-testing" },
+            { label: "Security Testing", link: "/security-testing" },
           ],
         },
         {
           heading: "Quality Assurance",
           services: [
-            { label: "Manual Testing", link: "/services/manual-testing" },
+            { label: "Manual Testing", link: "/manual-testing" },
             {
               label: "Automation Testing",
-              link: "/services/automation-testing",
+              link: "/automation-testing",
             },
             {
               label: "Regression Testing",
-              link: "/services/regression-testing",
+              link: "/regression-testing",
             },
             {
               label: "Performance Testing",
-              link: "/services/performance-testing",
+              link: "/performance-testing",
             },
-            { label: "QA Documentation", link: "/services/qa-documentation" },
-            { label: "Data Analysis", link: "/services/data-analysis" },
+            { label: "QA Documentation", link: "/qa-documentation" },
+            { label: "Data Analysis", link: "/data-analysis" },
           ],
         },
         {
           heading: "Advanced Testing",
           services: [
-            { label: "Load Testing", link: "/services/load-testing" },
+            { label: "Load Testing", link: "/load-testing" },
             {
               label: "Compatibility Testing",
-              link: "/services/compatibility-testing",
+              link: "/compatibility-testing",
             },
-            { label: "Usability Testing", link: "/services/usability-testing" },
+            { label: "Usability Testing", link: "/usability-testing" },
             {
               label: "Accessibility Testing",
-              link: "/services/accessibility-testing",
+              link: "/accessibility-testing",
             },
-            { label: "Database Testing", link: "/services/database-testing" },
+            { label: "Database Testing", link: "/database-testing" },
             {
               label: "Integration Testing",
-              link: "/services/integration-testing",
+              link: "/integration-testing",
             },
           ],
         },
@@ -153,20 +153,20 @@ const Navbar = () => {
       submenu: [
         {
           label: "Ecommerce Testing Services",
-          link: "/qa-solutions/ecommerce-testing",
+          link: "/ecommerce-testing",
         },
         {
           label: "Automation Testing Services",
-          link: "/qa-solutions/automation-testing",
+          link: "/automation-testing",
         },
         {
           label: "Gaming App Testing Services",
-          link: "/qa-solutions/gaming-app-testing",
+          link: "/gaming-app-testing",
         },
-        { label: "Manual Testing", link: "/qa-solutions/manual-testing" },
+        { label: "Manual Testing", link: "/manual-testing" },
         {
           label: "Banking & Finance Testing Services",
-          link: "/qa-solutions/banking-finance-testing",
+          link: "/banking-finance-testing",
         },
       ],
     },
