@@ -118,6 +118,18 @@ const WebappComprehensiveSlider = dynamic(
   }
 );
 
+const CardSlider = dynamic(
+  () => import("@/components/sections/CardSlider"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function WebAppTesting() {
   return (
     <div>
@@ -126,6 +138,7 @@ export default function WebAppTesting() {
         <WebappComprehensiveSection />
         <WebappReadyToEnsureQuality />
         <WebappComprehensiveSlider />
+        <CardSlider />
         <WebappProvenTestingProcess />
         <WebappWhyChooseTestriq />
         <WebappROISection />
