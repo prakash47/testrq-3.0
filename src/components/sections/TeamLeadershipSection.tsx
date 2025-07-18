@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { link } from "fs";
 import Home from "./CardSlider";
+import CardSlider from "./CardSlider";
 
 const TeamLeadershipSection = () => {
   const leaders = [
@@ -133,7 +134,7 @@ const TeamLeadershipSection = () => {
           </p>
         </div>
 
-        {/* <Home/> */}
+        <CardSlider/>
 
         {/* Leaders Grid */}
         <div className="space-y-12">
