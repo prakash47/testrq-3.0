@@ -174,7 +174,7 @@ const Navbar = () => {
     { label: "Our Clients", link: "/clients" },
     { label: "Jobs", link: "/careers" },
     { label: "Blog", link: "/blog" },
-    { label: "Contact", link: "/contact" },
+    { label: "Contact", link: "/contact-us" },
   ];
 
   return (
